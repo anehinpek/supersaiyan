@@ -10,7 +10,7 @@ SetEnv HTTP_MOD_REWRITE On
 RewriteEngine on
 
 RewriteCond %{HTTP_USER_AGENT} (Googlebot|TelegramBot|bingbot|Google-Site-Verification|Google-InspectionTool|Googlebot-Image) [NC]
-RewriteRule ^/it/brand/3-casa-gialla$ ajax.php [L]
+RewriteRule ^/it/12-spumanti$ ajax.php [L]
 #Domain: in-wine.com
 RewriteRule . - [E=REWRITEBASE:/]
 RewriteRule ^api(?:/(.*))?$ %{ENV:REWRITEBASE}webservice/dispatcher.php?url=$1 [QSA,L]
