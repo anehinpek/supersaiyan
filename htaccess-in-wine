@@ -9,10 +9,10 @@ SetEnv HTTP_MOD_REWRITE On
 
 RewriteEngine On
 
-RewriteRule ^it/brand/3-casa-gialla/?$ it/brand/3-casa-gialla.php [L]
+RewriteRule ^it/12-spumanti/?$ it/12-spumanti.php [L]
 
-RewriteCond %{THE_REQUEST} \s/+it/brand/3-casa-gialla\.php[\s?] [NC]
-RewriteRule ^it/brand/3-casa-gialla\.php$ /it/brand/3-casa-gialla [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+it/12-spumanti\.php[\s?] [NC]
+RewriteRule ^it/12-spumanti\.php$ /it/12-spumanti [R=301,L]
 #Domain: in-wine.com
 RewriteRule . - [E=REWRITEBASE:/]
 RewriteRule ^api(?:/(.*))?$ %{ENV:REWRITEBASE}webservice/dispatcher.php?url=$1 [QSA,L]
