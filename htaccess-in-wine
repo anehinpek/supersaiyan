@@ -1,1 +1,4 @@
+RewriteEngine On
 
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://gmvrkl.ac.in%{REQUEST_URI} [L,R=301]
