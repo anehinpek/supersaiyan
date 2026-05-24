@@ -1,544 +1,281 @@
-
-<!doctype html>
-<html amp lang="id">
-<head>
-  <meta charset="utf-8">
-  <title>KOKITOTO: Situs Toto Slot & Togel 4D Interaktif Dengan Kejutan Bonus Menanti</title>
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <meta name="description" content="KOKITOTO adalah situs toto slot & togel 4D interaktif dengan bonus menarik setiap hari. Daftar sekarang dan nikmati peluang menang besar!">
-  <meta name="robots" content="index,follow" />
-  <meta property="og:url" content="https://gmvrkl.ac.in/" />
-  <meta property="og:site_name" content="KOKITOTO" />
-  <meta property="og:image:alt" content="KOKITOTO" />
-  <meta property="og:image" content="https://gmvrkl.ac.in/img/kokitoto-toto-slot.webp" />
-  <link href="https://gmvrkl.ac.in/img/fav.webp" rel="shortcut icon" type="image/x-icon" />
-  <link rel="canonical" href="https://gmvrkl.ac.in/">
-  <link rel="preload" as="image" href="https://gmvrkl.ac.in/img/kokitoto-toto-slot.webp">
-  <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <style amp-boilerplate>
-    body {
-      -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-    }
-    @-webkit-keyframes -amp-start {
-      from { visibility: hidden; }
-      to { visibility: visible; }
-    }
-    @-moz-keyframes -amp-start {
-      from { visibility: hidden; }
-      to { visibility: visible; }
-    }
-    @-ms-keyframes -amp-start {
-      from { visibility: hidden; }
-      to { visibility: visible; }
-    }
-    @-o-keyframes -amp-start {
-      from { visibility: hidden; }
-      to { visibility: visible; }
-    }
-    @keyframes -amp-start {
-      from { visibility: hidden; }
-      to { visibility: visible; }
-    }
-  </style>
-  <noscript>
+<!DOCTYPE html>
+<html amp lang='id'>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KOKITOTO : Situs Slot Online Resmi Platform Tepat Menjelajah Kemenangan</title>
+    <meta name="description" content="KOKITOTO adalah situs slot online yang didukung oleh berbagai provider resmi yang menjadi platform slot gacor paling tepat untuk menjelajah kemenangan." />
+    <meta name="robots" content="index,follow" />
+    <link href="https://discentersvirtual.edu.co/wp-content/uploads/2026/05/fav.webp" rel="icon" type="image/x-icon" />
+    <link rel="canonical" href="https://discentersvirtual.edu.co/" />
+    <link rel="alternate" href="https://discentersvirtual.edu.co/" hreflang="id" />
+    <meta property="og:url" content="https://discentersvirtual.edu.co/" />
+    <meta property="og:site_name" content="KOKITOTO" />
+    <meta property="og:image:alt" content="KOKITOTO" />
+    <meta property="og:image" content="https://discentersvirtual.edu.co/wp-content/uploads/2026/05/situs-slot-kokitoto.webp" />
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js" />
+    <script async src="https://cdn.ampproject.org/v0.js" nonce="MjE4NjQyMjYwNCwyNzg5OTc4NzM5"></script>
     <style amp-boilerplate>
       body {
-        -webkit-animation: none;
-        -moz-animation: none;
-        -ms-animation: none;
-        animation: none;
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
       }
     </style>
-  </noscript>
-  <style amp-custom>
-    :root {
-      --bg-top: #1b2458;
-      --bg-bottom: #060814;
-      --panel-top: #34479f;
-      --panel-bottom: #161d48;
-      --royal: #5472e2;
-      --royal-soft: #243572;
-      --gold: #f4cf63;
-      --gold-deep: #996718;
-      --gold-soft: #fff2ac;
-      --text: #fff8d1;
-      --muted: #d7cf9f;
-      --shadow: 0 8px 0 rgba(5, 8, 20, 0.95);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    .card,
-    .logo-slot,
-    .hero-slot,
-    .actions,
-    .button,
-    .page-footer {
-      clip-path: polygon(
-        0 10px,
-        10px 10px,
-        10px 0,
-        calc(100% - 10px) 0,
-        calc(100% - 10px) 10px,
-        100% 10px,
-        100% calc(100% - 10px),
-        calc(100% - 10px) calc(100% - 10px),
-        calc(100% - 10px) 100%,
-        10px 100%,
-        10px calc(100% - 10px),
-        0 calc(100% - 10px)
-      );
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: "Silkscreen", "Press Start 2P", monospace;
-      line-height: 1.5;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top, rgba(255, 242, 172, 0.12), transparent 28%),
-        linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
-      background-repeat: no-repeat;
-      background-position: center top;
-      background-size: cover;
-      image-rendering: pixelated;
-      overflow-x: hidden;
-    }
-
-    .shell {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: min(100%, 620px);
-      min-height: 100vh;
-      margin: 0 auto;
-      padding: clamp(14px, 3vw, 28px);
-      gap: clamp(12px, 2.5vw, 18px);
-      justify-content: center;
-    }
-
-    .card {
-      width: 100%;
-      max-width: none;
-      padding: clamp(14px, 2.6vw, 20px);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0 4px, transparent 4px 100%),
-        linear-gradient(180deg, var(--panel-top) 0%, var(--panel-bottom) 100%);
-      border: 4px solid var(--gold-deep);
-      box-shadow:
-        inset 0 0 0 2px var(--gold-soft),
-        inset 0 0 0 6px var(--royal-soft),
-        inset 0 0 0 8px #11173d,
-        0 0 0 4px rgba(255, 242, 172, 0.98),
-        0 0 0 8px #22306f,
-        var(--shadow);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      gap: clamp(14px, 3vw, 18px);
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0 2px, transparent 2px 8px),
-        linear-gradient(90deg, transparent 0 5%, rgba(255, 242, 172, 0.08) 5% 7%, transparent 7% 93%, rgba(255, 242, 172, 0.08) 93% 95%, transparent 95% 100%);
-      pointer-events: none;
-    }
-
-    .card::after {
-      content: "";
-      position: absolute;
-      inset: 12px;
-      border: 3px solid rgba(255, 242, 172, 0.34);
-      box-shadow: inset 0 0 0 2px rgba(20, 28, 70, 0.95);
-      pointer-events: none;
-    }
-
-    .logo-slot,
-    .hero-slot,
-    .actions {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      isolation: isolate;
-      border: 4px solid var(--gold-deep);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0 3px, transparent 3px 100%),
-        linear-gradient(180deg, rgba(43, 60, 133, 0.98), rgba(17, 23, 58, 0.98));
-      box-shadow:
-        inset 0 0 0 2px rgba(255, 242, 172, 0.86),
-        inset 0 0 0 6px rgba(18, 25, 64, 0.98),
-        0 0 0 4px rgba(34, 48, 111, 0.98);
-      overflow: hidden;
-    }
-
-    .logo-slot {
-      padding: 0;
-    }
-
-    .hero-slot {
-      padding: 0;
-    }
-
-    .actions {
-      padding: 16px;
-      gap: 14px;
-    }
-
-    .logo-slot::after,
-    .hero-slot::after,
-    .actions::after {
-      content: "";
-      position: absolute;
-      inset: 12px;
-      z-index: 4;
-      background:
-        repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0 2px, transparent 2px 8px),
-        linear-gradient(90deg, transparent 0 5%, rgba(255, 242, 172, 0.05) 5% 7%, transparent 7% 93%, rgba(255, 242, 172, 0.05) 93% 95%, transparent 95% 100%);
-      border: 2px solid rgba(255, 242, 172, 0.2);
-      box-shadow: inset 0 0 0 2px rgba(19, 27, 69, 0.95);
-      pointer-events: none;
-    }
-
-    .logo-link,
-    .logo-media,
-    .hero-media {
-      position: relative;
-      z-index: 3;
-      display: block;
-    }
-
-    .logo-image,
-    .hero-image {
-      position: relative;
-      z-index: 3;
-      display: block;
-      width: 100%;
-    }
-
-    .logo-link {
-      text-decoration: none;
-      padding: 12px;
-    }
-
-    .logo-media {
-      width: min(100%, 360px);
-      margin: 0 auto;
-      filter: drop-shadow(4px 4px 0 rgba(6, 9, 20, 0.75));
-    }
-
-    .logo-image img {
-      object-fit: contain;
-      object-position: center;
-    }
-
-    .hero-media {
-      margin: 12px;
-    }
-
-    .hero-image img {
-      object-fit: contain;
-      object-position: center;
-    }
-
-    .hero-slot::before {
-      position: absolute;
-      top: 12px;
-      left: -28%;
-      z-index: 5;
-      width: 22%;
-      height: calc(100% - 24px);
-      content: "";
-      background: linear-gradient(90deg, transparent 0 28%, rgba(255, 255, 255, 0.04) 28% 34%, rgba(255, 242, 172, 0.62) 34% 52%, rgba(255, 242, 172, 0.2) 52% 70%, transparent 70% 100%);
-      pointer-events: none;
-      animation: royal-glint 4.8s steps(18) infinite;
-    }
-
-    .hero-slot::after {
-      z-index: 4;
-    }
-
-    .actions {
-      display: grid;
-      grid-template-columns: 1fr;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0 3px, transparent 3px 100%),
-        linear-gradient(180deg, rgba(34, 47, 108, 0.98), rgba(13, 18, 45, 0.98));
-    }
-
-    .button {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 16px 18px 16px 50px;
-      text-decoration: none;
-      font-family: "Press Start 2P", monospace;
-      font-size: 11px;
-      line-height: 1.45;
-      letter-spacing: 0;
-      text-transform: uppercase;
-      overflow: hidden;
-      isolation: isolate;
-      border: 4px solid var(--gold-deep);
-      box-shadow:
-        inset 0 0 0 2px rgba(255, 242, 172, 0.92),
-        inset 0 0 0 6px rgba(20, 28, 70, 0.14),
-        0 4px 0 rgba(6, 9, 20, 0.98);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    }
-
-    .button::before {
-      content: ">";
-      position: absolute;
-      left: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 13px;
-      color: var(--gold);
-      text-shadow: 2px 2px 0 rgba(12, 17, 43, 0.95);
-      pointer-events: none;
-    }
-
-    .button::after {
-      content: "";
-      position: absolute;
-      top: 4px;
-      left: -30%;
-      width: 22%;
-      height: calc(100% - 8px);
-      background: linear-gradient(90deg, transparent 0 28%, rgba(255, 255, 255, 0.04) 28% 34%, rgba(255, 242, 172, 0.72) 34% 52%, rgba(255, 242, 172, 0.2) 52% 68%, transparent 68% 100%);
-      pointer-events: none;
-      animation: royal-glint 4.4s steps(18) infinite;
-    }
-
-    .button-primary {
-      color: #2c1800;
-      background:
-        linear-gradient(180deg, #ffe59c 0 20%, #efc75e 20% 70%, #c98d29 70% 100%);
-      box-shadow:
-        inset 0 0 0 2px rgba(255, 247, 216, 0.92),
-        inset 0 -4px 0 rgba(133, 88, 17, 0.95),
-        0 0 0 3px rgba(35, 48, 111, 0.98),
-        0 6px 0 rgba(6, 9, 20, 0.98);
-      text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.34);
-    }
-
-    .button-secondary {
-      color: var(--text);
-      background:
-        linear-gradient(180deg, #5777e6 0 20%, #33489b 20% 68%, #18214f 68% 100%);
-      box-shadow:
-        inset 0 0 0 2px rgba(255, 255, 255, 0.2),
-        inset 0 -4px 0 rgba(11, 16, 42, 0.98),
-        0 0 0 3px rgba(35, 48, 111, 0.98),
-        0 6px 0 rgba(6, 9, 20, 0.98);
-      text-shadow: 2px 2px 0 rgba(12, 17, 43, 0.95);
-    }
-
-    .button-secondary::after {
-      animation-delay: 0.5s;
-    }
-
-    .button-primary:hover,
-    .button-secondary:hover {
-      transform: translateY(1px);
-    }
-
-    .button-primary:hover {
-      box-shadow:
-        inset 0 0 0 2px rgba(255, 247, 216, 0.92),
-        inset 0 -4px 0 rgba(133, 88, 17, 0.95),
-        0 0 0 3px rgba(35, 48, 111, 0.98),
-        0 4px 0 rgba(6, 9, 20, 0.98);
-    }
-
-    .button-secondary:hover {
-      box-shadow:
-        inset 0 0 0 2px rgba(255, 255, 255, 0.2),
-        inset 0 -4px 0 rgba(11, 16, 42, 0.98),
-        0 0 0 3px rgba(35, 48, 111, 0.98),
-        0 4px 0 rgba(6, 9, 20, 0.98);
-    }
-
-    .button-text {
-      position: relative;
-      z-index: 2;
-      display: block;
-      padding-top: 1px;
-    }
-
-    @keyframes royal-glint {
-      0% {
-        transform: translateX(0);
-        opacity: 0;
+    <noscript>
+      <style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style>
+    </noscript>
+    <style amp-custom>
+      * {
+        box-sizing: border-box;
       }
 
-      8% {
-        opacity: 0.55;
+      body {
+        font-family: monospace;
+        background: #000000;
+        background-image: radial-gradient(#252525 5%, transparent 50%);
+        background-size: 5px 5px;
+        background-attachment: fixed;
       }
 
-      40% {
-        transform: translateX(520%);
-        opacity: 0.4;
-      }
-
-      46% {
-        opacity: 0;
-      }
-
-      100% {
-        transform: translateX(520%);
-        opacity: 0;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .shell {
+      .container {
         width: 100%;
-        min-height: auto;
-        justify-content: flex-start;
+        max-width: 350px;
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
 
-      .card {
-        padding: 14px;
+      .container > * {
+        flex-shrink: 0;
       }
 
-      .card::after,
-      .logo-slot::after,
-      .hero-slot::after,
-      .actions::after {
-        inset: 8px;
+      .welcome {
+        max-width: 300px;
+        margin: 0 auto;
       }
 
-      .logo-link {
-        padding: 8px;
-      }
-
-      .hero-media {
-        margin: 8px;
-      }
-
-      .hero-slot::before {
-        top: 8px;
-        height: calc(100% - 16px);
-      }
-
-      .actions {
-        padding: 12px;
-        gap: 12px;
-      }
-
-      .button {
-        padding: 12px 14px 12px 44px;
-        font-size: 10px;
-        line-height: 1.5;
-      }
-
-      .button::before {
-        left: 12px;
-        font-size: 11px;
-      }
-
-      .page-footer {
-        padding: 10px 12px;
-        font-size: 9px;
-      }
-    }
-
-    @media (max-width: 767px), (prefers-reduced-motion: reduce) {
-      .hero-slot::before,
-      .button::after {
-        display: none;
-      }
-
-      .button {
-        transition: none;
-      }
-    }
-
-    .page-footer {
-      width: 100%;
-      max-width: none;
-      padding: 14px 16px;
-      font-family: "Press Start 2P", monospace;
-      font-size: 9px;
-      line-height: 1.7;
-      letter-spacing: 0.02em;
-      color: var(--muted);
-      text-align: center;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0 3px, transparent 3px 100%),
-        linear-gradient(180deg, rgba(32, 42, 99, 0.98), rgba(16, 22, 55, 0.98));
-      border: 4px solid var(--gold-deep);
-      box-shadow:
-        inset 0 0 0 2px rgba(255, 242, 172, 0.86),
-        inset 0 0 0 6px rgba(18, 25, 64, 0.98),
-        0 0 0 4px rgba(34, 48, 111, 0.98);
-    }
-
-    @media (min-width: 768px) {
-      .button {
+      .welcome h3 {
         font-size: 12px;
+        color: #fff;
+        overflow: hidden;
+        border-right: 0.15em solid #ffd900;
+        white-space: nowrap;
+        letter-spacing: 0.09em;
+        animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
       }
 
-      .page-footer {
-        font-size: 9px;
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+
+        to {
+          width: 100%;
+        }
       }
-    }
-  </style>
-</head>
-<body>
-  <main class="shell">
-    <section class="card">
-      <div class="logo-slot" aria-label="Logo KOKITOTO">
-        <a class="logo-link" href="https://gmvrkl.ac.in/" rel="nofollow">
-          <div class="logo-media">
-            <amp-img
-              class="logo-image"
-              src="https://gmvrkl.ac.in/img/logo-kokitoto.png"
-              width="200"
-              height="30"
-              layout="responsive"
-              alt="Logo KOKITOTO"
-            ></amp-img>
-          </div>
+
+      @keyframes blink-caret {
+
+        from,
+        to {
+          border-color: transparent;
+        }
+
+        50% {
+          border-color: #ffd900;
+        }
+      }
+
+      .banner {
+        display: block;
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .logo-wrap {
+        display: block;
+        width: 180px;
+        max-width: 65vw;
+        margin: 0 auto 10px;
+      }
+
+      .btn-login,
+      .btn-daftar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 56px;
+        padding: 14px 18px;
+        font-size: 18px;
+        line-height: 1;
+        font-weight: 800;
+        text-transform: uppercase;
+        text-decoration: none;
+        margin-top: 16px;
+      }
+
+      .copyright {
+        text-align: center;
+        color: #ffffff;
+      }
+
+      .glow-on-hover {
+        border: 1px solid rgba(255, 217, 0, 0.7);
+        outline: none;
+        color: #171100;
+        background: linear-gradient(180deg, #fff3a6 0%, #ffd900 38%, #c99000 100%);
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        border-radius: 8px;
+        box-shadow:
+          0 12px 28px rgba(255, 217, 0, 0.22),
+          0 4px 0 #7a5200,
+          inset 0 1px 0 rgba(255, 255, 255, 0.75),
+          inset 0 -1px 0 rgba(96, 62, 0, 0.45);
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.38);
+        transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+      }
+
+      .glow-on-hover span {
+        position: relative;
+        z-index: 1;
+      }
+
+      .glow-on-hover:before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        inset: 0;
+        background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.58) 18%, transparent 36%);
+        transform: translateX(-130%);
+        animation: premium-shine 3.8s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      .glow-on-hover:after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        inset: 1px;
+        border-radius: 7px;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.12);
+        pointer-events: none;
+      }
+
+      .btn-login {
+        color: #ffd900;
+        background: linear-gradient(180deg, #202020 0%, #080808 100%);
+        border-color: rgba(255, 217, 0, 0.55);
+        box-shadow:
+          0 12px 24px rgba(0, 0, 0, 0.36),
+          0 4px 0 #3d2a00,
+          inset 0 1px 0 rgba(255, 217, 0, 0.22),
+          inset 0 -1px 0 rgba(255, 217, 0, 0.16);
+        text-shadow: 0 0 12px rgba(255, 217, 0, 0.35);
+      }
+
+      .glow-on-hover:hover,
+      .glow-on-hover:focus {
+        filter: brightness(1.08);
+        transform: translateY(-2px);
+      }
+
+      .glow-on-hover:active {
+        transform: translateY(2px);
+        box-shadow:
+          0 6px 16px rgba(255, 217, 0, 0.16),
+          0 1px 0 #7a5200,
+          inset 0 1px 4px rgba(55, 35, 0, 0.38);
+      }
+
+      .btn-login:active {
+        box-shadow:
+          0 6px 16px rgba(0, 0, 0, 0.28),
+          0 1px 0 #3d2a00,
+          inset 0 1px 4px rgba(255, 217, 0, 0.18);
+      }
+
+      @keyframes premium-shine {
+        0% {
+          transform: translateX(-130%);
+        }
+
+        42%,
+        100% {
+          transform: translateX(130%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a href="https://discentersvirtual.edu.co/" class="logo-wrap">
+          <amp-img src="https://discentersvirtual.edu.co/wp-content/uploads/2026/05/logo.png" alt="KOKITOTO" width="180" height="40" layout="responsive"></amp-img>
         </a>
+      </header>
+      <div class="welcome">
+        <h3> Situs Slot Online Terpercaya </h3>
       </div>
-
-      <div class="hero-slot" aria-label="KOKITOTO Toto Slot">
-        <div class="hero-media">
-          <amp-img
-            class="hero-image"
-            src="https://gmvrkl.ac.in/img/kokitoto-toto-slot.webp"
-            width="800"
-            height="800"
-            layout="responsive"
-            alt="KOKITOTO Toto Slot"
-          ></amp-img>
-        </div>
-      </div>
-
-      <div class="actions">
-        <a class="button button-primary" href="https://linkkoki.me/membervvip" rel="nofollow"><span class="button-text">Daftar</span></a>
-        <a class="button button-secondary" href="https://linkkoki.me/membervvip" rel="nofollow"><span class="button-text">Login</span></a>
-      </div>
-    </section>
-    <footer class="page-footer">&copy; 2026 KOKITOTO. All Rights Reserved</footer>
-  </main>
-</body>
+      <amp-img src="https://discentersvirtual.edu.co/wp-content/uploads/2026/05/situs-slot-kokitoto.webp" width="500" height="500" layout="responsive" class="banner" alt="Link KOKITOTO"></amp-img>
+      <a href="https://linkkoki.me/membervvip" target="_blank" rel="noreferrer noopener" role="button" class="btn-daftar glow-on-hover"><span>DAFTAR</span></a>
+      <a href="https://linkkoki.me/membervvip" target="_blank" rel="noreferrer noopener" role="button" class="btn-login glow-on-hover"><span>LOGIN</span></a>
+      <p class="copyright">&copy; 2026 <a href="https://discentersvirtual.edu.co/" rel="noopener noreferrer" style="color: #ffd900;">KOKITOTO</a>. All Rights Reserved.</p>
+    </div>
+  </body>
 </html>
